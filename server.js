@@ -9,7 +9,7 @@ app.listen(port, () => {
 })
 
 //static files
-app.use(express.static(__dirname + 'public'))
+app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 app.use('/images', express.static(__dirname + 'public/images'))
@@ -22,6 +22,6 @@ app.set('layout', './layouts/full-width')
 app.set('view engine', 'ejs')
 
 //navigation
-app.get('/',(req,res)=>{
+app.get('', (req, res) => {
     res.render('index')
 })

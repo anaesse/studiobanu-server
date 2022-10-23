@@ -1,35 +1,3 @@
-/*-------------------------------------
-	Template: Tunein
-	Author : Webstrot
-	Copyright © 2019-20
----------------------------------------
-
-    CSS INDEX
-    ===================
-
-    1. BODY
-	2. CUSTOM CSS / A
-	3. PRELOADER
-	4. m24_logo_wrapper
-	5. main_slider_wrapper
-	6. treanding_songs_wrapper
-	7. concert_wrapper
-	8. pricing_plan_wrapper
-	9. blog_wrapper
-	10. partners_Section
-	11. footer_wrapper
-	12. adonis-player-wrap
-	13. indx_title_main_wrapper
-	14. artist_wrapper
-	15. free_music_wrapper
-	16. m24_genres_box
-	17. prs_es_about_main_section_wrapper
-	18. index2_main_header
-	19. index3_main_header
----------------------------------------*/
-/*--------------
-1.Theme default CSS
---------------------------*/
 body, html {
 	font-family: 'Roboto';
 	font-size: 16px;
