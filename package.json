@@ -1,0 +1,16 @@
+{
+  "name": "studio_bantu",
+  "version": "1.0.0",
+  "description": "Node js server for studio bantu",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sophia Edeki",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1"
+  }
+}
