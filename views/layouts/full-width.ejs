@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%- title %></title>
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/fonts.css" />
@@ -21,8 +21,306 @@
 
 </head>
 <body>
+      <!-- preloader Start -->
+      <div id="preloader">
+        <div id="status">
+            <img src="images/loader.gif" id="preloader_image" alt="loader">
+        </div>
+    </div>
+    <div class="cursor"></div>
+         <!-- top navi wrapper Start -->
+         <div class="m24_main_wrapper">
+            <div id="sidebar" class="bounce-to-right">
+                <div id="toggle_close">×</div>
+                <div id='cssmenu'>
+                    <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    
+                    <ul class="sidebb">
+                        <li ><a href='index.html'><i class="flaticon-home"></i>Home</a></li>
+                        <li ><a href='about.html'><i class="flaticon-home"></i>ABOUT</a></li>
+                        <li class='has-sub'><a href='#'><i class="flaticon-album"></i>DISCOGRAPHY</a>
+                            <ul>
+                                <li>
+                                    <a href="album.html"> <i class="flaticon-vinyl"></i>Song</a>
+                                </li>
+                                <li><a href="album_list.html"><i class="flaticon-playlist-1"></i>Song list</a></li>
+                                <!-- <li><a href="artist.html"><i class="flaticon-headphones"></i>artist</a></li> -->
+                                <!-- <li><a href="artist_single.html"><i class="flaticon-speaker"></i>artist single</a></li> -->
+                            
+                            </ul>
+                        </li>               
+                        <li class='has-sub'><a href='genres_single.html#'><i class="flaticon-playlist-3"></i>browse music</a>
+                            <ul>
+                                <li><a href="add_playlist.html"><i class="flaticon-music"></i>add playlist</a></li>
+                                <li><a href="genres.html"><i class="flaticon-files-and-folders"></i>genres</a></li>
+                                <li><a href="genres_single.html"><i class="flaticon-smartphone"></i>genres single</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class='has-sub'><a href='genres_single.html#'><i class="flaticon-playlist-1"></i>your music</a>
+                            <ul>
+                                <li><a href="download.html"><i class="flaticon-download"></i>download</a></li>
+                                <!-- <li><a href="favourite.html"><i class="flaticon-heart"></i>favourite</a></li> -->
+                                <li><a href="history.html"><i class="flaticon-clock"></i>history</a></li> 						
+                            </ul>
+                        </li>    
+                        <li><a href='request_song.html'><i class="flaticon-internet"></i>request song</a></li>
+                        <li><a href='contact_us.html'><i class="flaticon-internet"></i>contact us</a></li>
+                    </ul>
+                </div>
+            </div>    
+        </div>
+            <!-- top navi wrapper end -->
+            <div class="m24_navi_main_wrapper index2_main_header m24_cover index3_main_header m24_cover">
+                <div class="container-fluid d-flex justify-content-between pt-3 align-items-center">
+                    <div class="m24_logo_wrapper d-flex align-items-center">
+                        <div id="toggle" class="px-3">
+                            <a href="#"><i class="flaticon-menu-1"></i></a>
+                        </div>
+                        <div class="m24_logo_div">
+                            <a href="index.html">
+                                <img src="images/logo2.png" alt="logo" class="images">
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="m24_navigation_wrapper"></div>
+                        <!-- mainmenu end -->
+                        <div class="theme-switch-wrapper px-2">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox" />							
+                                <span class="slider round"></span>
+                            </label>
+                        </div> 
+                        
+                        <div class="m24_header_right_Wrapper">
+                            <div class="m24_signin_wrapper">
+                                <a href="genres_single.html#" data-toggle="modal" data-target="#login_modal">
+                                  <img src="images/pf.png" alt="img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- navi wrapper End -->
     <%- body %>
+     
+          <!-- footer Wrapper start -->
 
+          <div class="footer_wrapper m24_cover">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12 col-sm-12">
+                        <div class="footer_widget footer_about_wrapper m24_cover">
+                            <div class="abotus_content">
+                                <a href="index.html"><img src="images/logo2.png" class="img-responsive footer-image pb-3" alt="logo" /></a>
+                                <p class="pl-3">Sed do eiusmod tempor unt ut labore et dolore magna liqua. Ut enim ad minim veniam...</p>
+                            </div>
+                            <ul class="footer_about_link_wrapper m24_cover pl-3">
+                                <li> <i class="fa fa-phone"></i>+234 - 816 -133 -2538</li>
+                                <li> <a href="index.html#"><i class="fa fa-envelope"></i><span class="__cf_email__" data-cfemail="ebbf9e858e8285ab8e938a869b878ec5888486">[email&#160;protected]</span></a></li> 
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 col-sm-12">
+                        <div class="footer_widget footer_blog_wrapper m24_cover">
+                            <h4>usefull links</h4>
+                            <ul class="footer_about_link_wrapper usefull_linkx m24_cover">
+
+                                <li> <a href="index.html#">Terms of Use</a>
+                                </li>
+                                <li> <a href="index.html#">Privacy Policy </a>
+                                </li>
+                                <li> <a href="index.html#">Feedback </a>
+                                </li>
+
+                                <li> <a href="index.html#">Report an issue </a>
+                                </li>
+                                <!-- <li> <a href="index3.html#">Sitemap </a>
+                                </li> -->
+                                <li> <a href="index.html#">FAQ </a></li>
+                                <!-- <li> <a href="index3.html#">advertise </a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                   
+                    <div class="col-lg-4 col-md-6 col-12 col-sm-12">
+                        <div class="footer_widget footer_contact_wrapper m24_cover">
+                            <h4>newsletter</h4>
+                            <p>Our latest news & Special Offers </p>
+                            <div class="contect_form_footer m24_cover">
+                                <input type="text" name="name" placeholder="name">
+                            </div>
+                            <div class="contect_form_footer m24_cover">
+                                <input type="text" name="email" placeholder="Email">
+                            </div>
+                            <div class="lang_apply_btn footer_cont_btn">
+                                <ul>
+                                    <li>
+                                        <a href="index.html#"> <i class="flaticon-play-button"></i>subscribe</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="foter_top_wrapper m24_cover">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li><a href="index.html#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li><a href="index.html#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li> <a href="index.html#"><i class="fab fa-linkedin-in"></i></a> </li>
+
+                    <li><a href="index.html#"><i class="fab fa-google-plus-g"></i></a>
+                    </li>
+                    <li><a href="index.html#"><i class="fab fa-pinterest-p"></i></a>
+                    </li>
+                    <li><a href="index.html#"><i class="fab fa-tumblr"></i></a>
+                    </li>
+                    <li> <a href="index.html#"><i class="fab fa-behance"></i></a> </li>
+                    <li> <a href="index.html#"><i class="fab fa-dribbble"></i></a> </li>
+                    <li> <a href="index.html#"><i class="fab fa-whatsapp"></i></a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section2_bottom_wrapper m24_cover">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                        <div class="btm_foter_box">
+
+                            <p>Copyright © 2022 <a href="index.html"> Studiobantu</a> designed by <a href="index.html#"> Phieeyah.</a></p>
+                            <!-- <div class="aboutus_social_icons">
+                                <a href="index3.html#">Get Tunein <i class="flaticon-play-button"></i></a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--footer wrapper end-->  
+        <!-- login register  modal section -->
+             <div class="modal fade lang_m24_banner" id="login_modal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+
+                                <div class="m24_language_box m24_cover">
+                                    <h1>Login / Sign In</h1>
+                                    <p>for unlimited music streaming & a personalised experience</p>
+                                </div>
+                                <div class="login_form_wrapper">
+
+                                    <div class="icon_form comments_form">
+
+                                        <input type="text" class="form-control" name="full_name" placeholder="Enter Email Address*">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="icon_form comments_form">
+
+                                        <input type="password" class="form-control" placeholder="Enter Password *">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <div class="login_remember_box">
+                                        <label class="control control--checkbox">keep me signed in
+                                            <input type="checkbox">
+                                            <span class="control__indicator"></span>
+                                        </label>
+                                        <a href="genres_single.html#" class="forget_password">
+                                            Forgot Password ?
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="lang_apply_btn_wrapper m24_cover">
+                                    <div class="lang_apply_btn">
+
+                                        <a href="genres_single.html#">login now</a>
+
+                                    </div>
+                                    <div class="cancel_wrapper">
+                                        <a href="genres_single.html#" class="" data-dismiss="modal">cancel</a>
+                                    </div>
+                                    <div class="dont_have_account m24_cover">
+                                        <p>Don’t have an acount ? <a href="genres_single.html#register_modal" data-toggle="modal">register here</a></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade lang_m24_banner" id="register_modal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+
+                                <div class="m24_language_box m24_cover">
+                                    <h1>Register / Sign Up</h1>
+                                    <p>for unlimited music streaming & a personalised experience</p>
+                                </div>
+                                <div class="login_form_wrapper">
+                                    <div class="icon_form comments_form">
+
+                                        <input type="text" class="form-control" name="first_name" placeholder="Enter your name">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="icon_form comments_form">
+
+                                        <input type="text" class="form-control" name="full_name" placeholder="Enter Email Address*">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="icon_form comments_form">
+
+                                        <input type="password" class="form-control" placeholder="Enter Password *">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <div class="icon_form comments_form">
+
+                                        <input type="password" class="form-control" placeholder="confirm password*">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+
+                                </div>
+                                <div class="lang_apply_btn_wrapper m24_cover">
+                                    <div class="lang_apply_btn">
+
+                                        <a href="genres_single.html#">register</a>
+
+                                    </div>
+                                    <div class="cancel_wrapper">
+                                        <a href="genres_single.html#" class="" data-dismiss="modal">cancel</a>
+                                    </div>
+                                    <div class="dont_have_account m24_cover">
+                                        <p>Don’t have an acount ? <a href="genres_single.html#login_modal" data-toggle="modal">login here</a></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+    <!-- login register  modal end -->
      <!--custom js files-->
      <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.3.1.min.js"></script>
      <script src="js/bootstrap.min.js"></script>
