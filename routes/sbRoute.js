@@ -1,160 +1,36 @@
 const express = require('express')
 const router = express.Router()
-const {getHome, getAbout, getSongs, getSong_list, getAdd_playlist, getGenres, getGenres_single, getDownload, getHistory, getRequest, getContact} = require('../controller/sbController')
+const {getHome, getAbout, getSongs, getSong_list, getAdd_playlist, getGenres, getGenres_single, getDownload, getHistory, getRequest, getContact,
+    setHome, setAbout, setSongs, setSong_list, setAdd_playlist, setGenres, setGenres_single, setDownload, setHistory, setRequest, setContact,
+    updateHome, updateAbout, updateSongs, updateSong_list, updateAdd_playlist, updateGenres, updateGenres_single, updateDownload, updateHistory, updateRequest, updateContact,
+    deleteHome, deleteAbout, deleteSongs, deleteSong_list, deleteAdd_playlist, deleteGenres, deleteGenres_single, deleteDownload, deleteHistory, deleteRequest, deleteContact} = require('../controller/sbController')
 
 //navigation
 
-//Get request
+//Get / Post request
+router.route('/').get(getHome).post(setHome)
+router.route('/about').get(getAbout).post(setAbout)
+router.route('/songs').get(getSongs).post(setSongs)
+router.route('/songs_list').get(getSong_list).post(setSong_list)
+router.route('/add_playlist').get(getAdd_playlist).post(setAdd_playlist)
+router.route('/genres').get(getGenres).post(setGenres)
+router.route('/genres_single').get(getGenres_single).post(setGenres_single)
+router.route('/download').get(getDownload).post(setDownload)
+router.route('/history').get(getHistory).post(setHistory)
+router.route('/request_song').get(getRequest).post(setRequest)
+router.route('/contact').get(getContact).post(setContact)
 
-router.get('/', getHome)
-router.get('/about', getAbout)
-router.get('/songs', getSongs)
-router.get('/song_list', getSong_list)
-router.get('/add_playlist', getAdd_playlist)
-router.get('/genres', getGenres)
-router.get('/genres_single', getGenres_single)
-router.get('/download', getDownload)
-router.get('/history', getHistory)
-router.get('/request_song', getRequest)
-router.get('/contact', getContact)
-
-//Send request
-
-router.post('/', (req, res) => {
-    res.status(200).render('index', {title : 'Home Page'})
-})
-router.post('/about', (req, res) => {
-    res.render('about', {layout: './layouts/full-width',
-                         title: 'About Page'})
-})
-router.post('/songs', (req, res) => {
-    res.render('songs', {layout: './layouts/full-width',
-                         title: 'Discology/song Page'})
-})
-router.post('/song_list', (req, res) => {
-    res.render('song_list', {layout: './layouts/full-width',
-                              title: 'Discology/song_list Page'})
-})
-router.post('/add_playlist', (req, res) => {
-    res.render('add_playlist', {layout: './layouts/full-width',
-                                title: 'Playlist Page'})
-})
-router.post('/genres', (req, res) => {
-    res.render('genres', {layout: './layouts/full-width',
-                           title: 'Genres Page'})
-})
-router.post('/genres_single', (req, res) => {
-    res.render('genres_single', {layout: './layouts/full-width',
-                                 title: 'Genres_single Page'})
-})
-router.post('/download', (req, res) => {
-    res.render('download', {layout: './layouts/full-width',
-                            title: 'Download Page'})
-})
-router.post('/history', (req, res) => {
-    res.render('history', {layout: './layouts/full-width',
-                           title: 'History Page'})
-})
-router.post('/request_song', (req, res) => {
-    res.render('request_song', {layout: './layouts/full-width',
-                                title: 'Request_song Page'})
-})
-router.post('/contact', (req, res) => {
-    res.render('contact', {layout: './layouts/full-width',
-                            title: 'Contact Page'})
-})
-
-//Update request
-
-router.put('/:id', (req, res) => {
-    res.status(200).render('index', {title : 'Home Page'})
-})
-router.put('/about:id', (req, res) => {
-    res.render('about', {layout: './layouts/full-width',
-                         title: 'About Page'})
-})
-router.put('/songs:id', (req, res) => {
-    res.render('songs', {layout: './layouts/full-width',
-                         title: 'Discology/song Page'})
-})
-router.put('/song_list:id', (req, res) => {
-    res.render('song_list', {layout: './layouts/full-width',
-                              title: 'Discology/song_list Page'})
-})
-router.put('/add_playlist:id', (req, res) => {
-    res.render('add_playlist', {layout: './layouts/full-width',
-                                title: 'Playlist Page'})
-})
-router.put('/genres:id', (req, res) => {
-    res.render('genres', {layout: './layouts/full-width',
-                           title: 'Genres Page'})
-})
-router.put('/genres_single:id', (req, res) => {
-    res.render('genres_single', {layout: './layouts/full-width',
-                                 title: 'Genres_single Page'})
-})
-router.put('/download:id', (req, res) => {
-    res.render('download', {layout: './layouts/full-width',
-                            title: 'Download Page'})
-})
-router.put('/history:id', (req, res) => {
-    res.render('history', {layout: './layouts/full-width',
-                           title: 'History Page'})
-})
-router.put('/request_song:id', (req, res) => {
-    res.render('request_song', {layout: './layouts/full-width',
-                                title: 'Request_song Page'})
-})
-router.put('/contact:id', (req, res) => {
-    res.render('contact', {layout: './layouts/full-width',
-                            title: 'Contact Page'})
-})
-
-//Delete request
-
-router.delete('/:id', (req, res) => {
-    res.status(200).render('index', {title : 'Home Page'})
-})
-router.delete('/about:id', (req, res) => {
-    res.render('about', {layout: './layouts/full-width',
-                         title: 'About Page'})
-})
-router.delete('/songs:id', (req, res) => {
-    res.render('songs', {layout: './layouts/full-width',
-                         title: 'Discology/song Page'})
-})
-router.delete('/song_list:id', (req, res) => {
-    res.render('song_list', {layout: './layouts/full-width',
-                              title: 'Discology/song_list Page'})
-})
-router.delete('/add_playlist:id', (req, res) => {
-    res.render('add_playlist', {layout: './layouts/full-width',
-                                title: 'Playlist Page'})
-})
-router.delete('/genres:id', (req, res) => {
-    res.render('genres', {layout: './layouts/full-width',
-                           title: 'Genres Page'})
-})
-router.delete('/genres_single:id', (req, res) => {
-    res.render('genres_single', {layout: './layouts/full-width',
-                                 title: 'Genres_single Page'})
-})
-router.delete('/download:id', (req, res) => {
-    res.render('download', {layout: './layouts/full-width',
-                            title: 'Download Page'})
-})
-router.delete('/history:id', (req, res) => {
-    res.render('history', {layout: './layouts/full-width',
-                           title: 'History Page'})
-})
-router.delete('/request_song:id', (req, res) => {
-    res.render('request_song', {layout: './layouts/full-width',
-                                title: 'Request_song Page'})
-})
-router.delete('/contact:id', (req, res) => {
-    res.render('contact', {layout: './layouts/full-width',
-                            title: 'Contact Page'})
-})
-
+//Update / Delete request
+router.route('/:id').put(getHome).delete(setHome)
+router.route('/about/:id').put(getAbout).delete(setAbout)
+router.route('/songs/:id').put(getSongs).delete(setSongs)
+router.route('/songs_list/:id').put(getSong_list).delete(setSong_list)
+router.route('/add_playlist/:id').put(getAdd_playlist).delete(setAdd_playlist)
+router.route('/genres/:id').put(getGenres).delete(setGenres)
+router.route('/genres_single/:id').put(getGenres_single).delete(setGenres_single)
+router.route('/download/:id').put(getDownload).delete(setDownload)
+router.route('/history/:id').put(getHistory).delete(setHistory)
+router.route('/request_song/:id').put(getRequest).delete(setRequest)
+router.route('/contact/:id').put(getContact).delete(setContact)
 
 module.exports = router
