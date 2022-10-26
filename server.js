@@ -1,7 +1,21 @@
+require('dotenv').config()
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
-const port = 8000
+const port = process.env.PORT || 8000
+
 const app = express()
+const mongoose = require('mongoose')
+const mongoUrl = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@studio-bantu.lcnhckl.mongodb.net/?retryWrites=true&w=majority`
+
+async function connect() {
+    try{
+        await mongoose.connect(mongoUrl)
+        console.log('connected to mongoDB')
+    } catch (error){
+        console.error(error)
+    }
+}
+connect()
 
 // listening on port 8000
 app.listen(port, () => {
@@ -22,46 +36,14 @@ app.set('layout', './layouts/home-templete')
 app.set('view engine', 'ejs')
 
 //navigation
-app.get('', (req, res) => {
-    res.render('index', {title : 'Home Page'})
-})
-app.get('/about', (req, res) => {
-    res.render('about', {layout: './layouts/full-width',
-                         title: 'About Page'})
-})
-app.get('/songs', (req, res) => {
-    res.render('songs', {layout: './layouts/full-width',
-                         title: 'Discology/song Page'})
-})
-app.get('/song_list', (req, res) => {
-    res.render('song_list', {layout: './layouts/full-width',
-                              title: 'Discology/song_list Page'})
-})
-app.get('/add_playlist', (req, res) => {
-    res.render('add_playlist', {layout: './layouts/full-width',
-                                title: 'Playlist Page'})
-})
-app.get('/genres', (req, res) => {
-    res.render('genres', {layout: './layouts/full-width',
-                           title: 'Genres Page'})
-})
-app.get('/genres_single', (req, res) => {
-    res.render('genres_single', {layout: './layouts/full-width',
-                                 title: 'Genres_single Page'})
-})
-app.get('/download', (req, res) => {
-    res.render('download', {layout: './layouts/full-width',
-                            title: 'Download Page'})
-})
-app.get('/history', (req, res) => {
-    res.render('history', {layout: './layouts/full-width',
-                           title: 'History Page'})
-})
-app.get('/request_song', (req, res) => {
-    res.render('request_song', {layout: './layouts/full-width',
-                                title: 'Request_song Page'})
-})
-app.get('/contact', (req, res) => {
-    res.render('contact', {layout: './layouts/full-width',
-                            title: 'Contact Page'})
-})
+app.use('/', require('./routes/sbRoute'))
+app.use('/about', require('./routes/sbRoute'))
+app.use('/songs', require('./routes/sbRoute'))
+app.use('/song_list', require('./routes/sbRoute'))
+app.use('/add_playlist', require('./routes/sbRoute'))
+app.use('/genres', require('./routes/sbRoute'))
+app.use('/genres_single', require('./routes/sbRoute'))
+app.use('/download', require('./routes/sbRoute'))
+app.use('/history', require('./routes/sbRoute'))
+app.use('/request_song', require('./routes/sbRoute'))
+app.use('/contact', require('./routes/sbRoute'))
