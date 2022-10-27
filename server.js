@@ -1,21 +1,21 @@
 require('dotenv').config()
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
+const {errorHandler} = require('./middleware/errorMiddleware')
+const connectDB = require('./config/dp')
 const port = process.env.PORT || 8000
+connectDB()
 
 const app = express()
-const mongoose = require('mongoose')
-const mongoUrl = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@studio-bantu.lcnhckl.mongodb.net/?retryWrites=true&w=majority`
 
-async function connect() {
-    try{
-        await mongoose.connect(mongoUrl)
-        console.log('connected to mongoDB')
-    } catch (error){
-        console.error(error)
-    }
-}
-connect()
+
+//Handlers
+app.use(express.json())
+app.use(express.urlencoded({
+    extended : false
+}))
+app.use(errorHandler)
+
 
 // listening on port 8000
 app.listen(port, () => {
