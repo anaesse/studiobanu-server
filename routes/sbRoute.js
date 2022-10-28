@@ -16,6 +16,7 @@ router.route('/add_playlist').get(getAdd_playlist).post(setAdd_playlist)
 router.route('/genres').get(getGenres).post(setGenres)
 router.route('/genres_single').get(getGenres_single).post(setGenres_single)
 router.route('/download').get(getDownload).post(setDownload)
+// router.route('/download/:id').get(getDownload)
 router.route('/history').get(getHistory).post(setHistory)
 router.route('/request_song').get(getRequest).post(setRequest)
 router.route('/contact').get(getContact).post(setContact)
@@ -32,5 +33,6 @@ router.route('/download/:id').put(getDownload).delete(setDownload)
 router.route('/history/:id').put(getHistory).delete(setHistory)
 router.route('/request_song/:id').put(getRequest).delete(setRequest)
 router.route('/contact/:id').put(getContact).delete(setContact)
+
 
 module.exports = router

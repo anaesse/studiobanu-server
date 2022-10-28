@@ -1,4 +1,5 @@
 const asyncHandler = require('express-async-handler')
+const songModel = require('../models/songsModel')
 
 
 const studioBantu = require('../models/sbModel')
@@ -6,8 +7,9 @@ const studioBantu = require('../models/sbModel')
 //route GET /
 //access private
 const getHome = asyncHandler(  async(req, res) => {   
-    // const goals = await studioBantu.find()  
-        res.status(200).render('index', {title : 'Home Page'})
+    const songs = await songModel.find() 
+    
+        res.status(200).render('index', {title : 'Home Page', trendingSongs: songs})
     }
 ) 
 
@@ -63,6 +65,11 @@ const getGenres_single = asyncHandler(  async(req, res) => {
 //route GET /download
 //access private
 const getDownload = asyncHandler( async(req, res)  => {
+    // const {id} = req.params;
+    // const song = await songModel.findOne({_id: id})
+
+    // console.log(song)
+
     res.render('download', {layout: './layouts/full-width',
                             title: 'Download Page'})
 })

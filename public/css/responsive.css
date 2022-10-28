@@ -1036,6 +1036,9 @@
 	}
 }
 @media (max-width:440px) {
+    .images{
+        width: 60%;
+    }
     .music_field_box label {
         font-size: 14px
     }
@@ -1102,6 +1105,9 @@
 	}
 }
 @media (max-width:380px) {
+    .images{
+        width: 80%;
+    }
     .m24_logo_wrapper {
         width: 69%
     }
@@ -1217,6 +1223,9 @@
 	}
 }
 @media (max-width:320px) {
+    .images{
+        width: 100%;
+    }
     .relaese_viewall_wrapper {
         display: none
     }

@@ -1,3 +1,35 @@
+/*-------------------------------------
+	Template: Tunein
+	Author : Webstrot
+	Copyright © 2019-20
+---------------------------------------
+
+    CSS INDEX
+    ===================
+
+    1. BODY
+	2. CUSTOM CSS / A
+	3. PRELOADER
+	4. m24_logo_wrapper
+	5. main_slider_wrapper
+	6. treanding_songs_wrapper
+	7. concert_wrapper
+	8. pricing_plan_wrapper
+	9. blog_wrapper
+	10. partners_Section
+	11. footer_wrapper
+	12. adonis-player-wrap
+	13. indx_title_main_wrapper
+	14. artist_wrapper
+	15. free_music_wrapper
+	16. m24_genres_box
+	17. prs_es_about_main_section_wrapper
+	18. index2_main_header
+	19. index3_main_header
+---------------------------------------*/
+/*--------------
+1.Theme default CSS
+--------------------------*/
 body, html {
 	font-family: 'Roboto';
 	font-size: 16px;
@@ -8,11 +40,11 @@ body, html {
 	padding-right:0 !important;
 }
 ::selection{
-	background-color: rgb(254, 121, 69);
+	background-color: rgb(251, 253, 174);
 	color:#fff;
 }
 a {
-	color: #fa5b41;
+	color: #f2b400;
 	text-decoration: none;
 	-webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -23,7 +55,7 @@ a {
 a:hover, a:focus {
 	text-decoration: none;
 	outline: none;
-	color:#fa5b41;
+	color:#f2b400;
 	-webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -106,7 +138,7 @@ a:hover {
 	height:200px;
 }
 .cursor {
-	border: 1px solid rgb(248, 71, 62);
+	border: 1px solid rgb(242, 180, 0);
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
@@ -133,9 +165,9 @@ a:hover {
   }
 }
 .cursor-close {
-  background: -moz-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-  background: -webkit-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-  background: linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
+  background: -moz-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+  background: -webkit-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+  background: linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
   transform: matrix(3, 0, 0, 3, 0, 0) !important;
   mix-blend-mode: difference;
 }
@@ -173,7 +205,7 @@ a:hover {
 
 @keyframes cursor-active {
   0% {
-    box-shadow: 0 0 0 0 #f7541b;
+    box-shadow: 0 0 0 0 #f2b400;
   }
   100% {
     box-shadow: 0 0 0 3rem rgba(247, 84, 27, 0);
@@ -181,7 +213,7 @@ a:hover {
 }
 @keyframes cursor-active2 {
   0% {
-    box-shadow: 0 0 0 0 #f7541b;
+    box-shadow: 0 0 0 0 #fbfdae;
   }
   100% {
     box-shadow: 0 0 0 1rem rgba(247, 84, 27, 0);
@@ -248,7 +280,7 @@ a:hover {
 	padding:9px 20px !important;
 }
 .navi_2_dropdown li a:hover{
-	color:#fa5b41;
+	color:#f2b400;
 	 -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -256,7 +288,7 @@ a:hover {
     transition: all 0.5s;
 }
 .navi_2_dropdown li a:hover i:before{
-	color:#fa5b41;
+	color:#f2b400;
 	 -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -270,7 +302,7 @@ a:hover {
 .mainmenu ul li:hover .gc_main_navigation,
 .mainmenu ul li.active > .gc_main_navigation {
     opacity: 1;
-	color:#fa5b41 !important;
+	color:#f2b400 !important;
 }
 .nav > li > a:focus,
 .nav > li > a:hover {
@@ -360,7 +392,7 @@ a:hover {
 	transition: all 0.5s ease;
 }
 .mainmenu ul li:hover .gc_main_navigation i:before, .mainmenu ul li.active > .gc_main_navigation i:before{
-	color:#fa5b41;
+	color:#f2b400;
 }
 .m24_navigation_wrapper{
 	float:left;
@@ -369,7 +401,7 @@ a:hover {
 	position:relative;
 }
 .active{
-	color:#fa5840 !important;
+	color:#fbfdae !important;
 }
 .mainmenu ul li a span{
 	float:right;
@@ -438,8 +470,7 @@ a:hover {
 	width: 100%;
 } */
 .images{
-	width: 45%;
-	/* height: 50%; */
+	width: 35%;
 }
 .crm_message_dropbox_wrapper .nice-select .option:hover, .crm_message_dropbox_wrapper .nice-select .option.focus, .crm_message_dropbox_wrapper .nice-select .option.selected.focus{
 	background:transparent;
@@ -533,7 +564,7 @@ a:hover {
 	font-size:16px;
 }
 .crm_mess_all_main_box_wrapper p a:hover{
-	color:#f94a3f;
+	color:#f2b40e;
 }
 .crm_message_dropbox_wrapper .nice-select .list:hover .option:first-child:not(:hover){
 	background:#f9f9f9 !important;
@@ -623,7 +654,7 @@ a:hover {
     transition: all 0.5s;
 }
 #cssmenu > ul > li > a:hover{
-	color:#fa5b41;
+	color:#f2b400;
 	 -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -696,7 +727,7 @@ a:hover {
   padding-left: 32px;
 }
 #cssmenu ul ul li a:hover {
-  color: #fa5b41;
+  color: #f2b400;
   -webkit-transition: color .2s ease;
   -o-transition: color .2s ease;
   transition: color .2s ease;
@@ -714,7 +745,7 @@ a:hover {
     right: 9px;
     top: 24px;
     font-size: 32px;
-    color: rgb(248, 71, 62);
+    color: #f2b400;
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -733,8 +764,9 @@ a:hover {
 }
 #cssmenu li a i{
 	margin-right:10px;
-	color:#fa5b41;
+	color:rgb(242, 180, 0);
 	font-size:18px;
+	
 }
 #cssmenu li a i:before{
 	font-size:19px;
@@ -749,10 +781,10 @@ a:hover {
 .bar1, .bar2, .bar3 {
     width: 25px;
     height: 3px;
-	background: rgb(180, 70, 255);
-    background: -moz-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: -webkit-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
+	background: rgb(242, 180, 0);
+    background: -moz-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
     margin: 4px 0;
    -webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -867,7 +899,7 @@ a:hover {
 	background-color: #fff;}
 .comboTreeDropDownContainer li:hover{
 	background-color: transparent;
-	color:#fa5b41;
+	color:#f2b400;
 }
 span.comboTreeItemTitle{
 	display: block;
@@ -953,10 +985,10 @@ span.comboTreeItemTitle{
     width: 30px;
     height: 30px;
     line-height: 30px;
-	background:  rgb(248, 71, 62);
-    background: -moz-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: -webkit-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
+	background:  rgb(242, 180, 0);
+    background: -moz-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
    	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	border-radius: 100px;
@@ -998,7 +1030,7 @@ span.comboTreeItemTitle{
 .lang_list_wrapper a i{
 	margin-left:5px;
 	font-size:18px;
-	color:#fa5b41;
+	color:#f2b400;
 	position:relative;
 	top:2px;
 }
@@ -1071,7 +1103,7 @@ span.comboTreeItemTitle{
 	margin-left:2px;
 }
 .music_field_box input[type="checkbox"] + label:before {
-  border: 1px solid #fa5b41;
+  border: 1px solid #f2b400;
   content: "\00a0";
   display: inline-block;
   font: 15px/1em sans-serif;
@@ -1090,9 +1122,9 @@ span.comboTreeItemTitle{
     color: #fff;
     content: "\2713";
     font-weight: 900;
-    background: -moz-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: -webkit-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
+    background: -moz-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 251, 174) 100%);
+    background: linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
 }
 .music_field_box input[type="checkbox"]:checked + label:after {
   font-weight: 900;
@@ -1123,7 +1155,7 @@ span.comboTreeItemTitle{
     height: 45px;
     text-transform: uppercase;
     line-height: 45px;
-	background-image:linear-gradient(to right, #f8473e, #fe7945, #ff8d61, #ff3b1b);
+	background-image:linear-gradient(to right, #f2b40e, #fbfda5, #fbfda1, #f2b400);
     text-align: center;
     border: none;
     background-size: 280% 100%;
@@ -1155,9 +1187,9 @@ span.comboTreeItemTitle{
     width: 17px;
     height: 17px;
     color: #ffffff;
-    background: -moz-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: -webkit-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
+    background: -moz-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
      -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
    border-radius: 100%;
@@ -1180,12 +1212,12 @@ span.comboTreeItemTitle{
   -moz-border-radius: 100px;
    border-radius: 100px;
 }
-/* .m24_signin_wrapper .login_top_wrapper {
+.m24_signin_wrapper .login_top_wrapper {
     float: left;
     width: calc(100% - 50px);
     padding-left: 15px;
 	padding-top:6px;
-} */
+}
 .login_top_wrapper p {
     font-size: 16px;
     color: #191919;
@@ -1315,9 +1347,9 @@ span.comboTreeItemTitle{
     border: 1px solid #333;
 }
 .slider-area .carousel-inner .carousel-indicators li.active {
-	background: -moz-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: -webkit-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
+	background: -moz-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
     width: 10px;
     height:10px;
 	-webkit-border-radius: 10px;
@@ -1443,7 +1475,7 @@ span.comboTreeItemTitle{
     cursor: pointer;
 }
 .treanding_song_slider .owl-theme .owl-nav .owl-next:hover, .treanding_song_slider .owl-theme .owl-nav .owl-prev:hover{
-    color: #fa5b41;
+    color: #f2b400;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     -ms-transition: all .5s;
@@ -1521,13 +1553,13 @@ ul.tranding_more_option li a {
 }
 ul.tranding_more_option li a:hover,
 .m24_rcnt_box:hover .m24_rcnt_box_text h3 a {
-	color: #fa5b41;
+	color: #f2b400;
 }
 ul.tranding_more_option li a .opt_icon {
 	padding-right: 10px;
 }
 ul.tranding_more_option li a .opt_icon i:before{
-	color:#fa5b41;
+	color:#f2b400;
 	font-size:15px;
 	font-weight:600;
 }
@@ -1624,7 +1656,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 }
 /* about us */
 #about_us {
-	color: #fa5b41;
+	color: #f2b400;
 }
 /* about_mission start */
 .about_mission{
@@ -1635,7 +1667,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 	padding-bottom: 30px;
 }
 .about_mission h4 {
-	color: #fa5b41;
+	color: #f2b400;
 	/* padding: 10px 0; */
 	/* margin-bottom: 20px; */
 }
@@ -1652,7 +1684,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 	font-size: 30px;
 	color: #FFFFFF;
 	opacity: 0.7;
-	background-color: #fa5b41;
+	background-color: #f2b400;
 	border: 2px solid #C8E8E9;
 
 	webkit-transition:all .5s ease;
@@ -1663,7 +1695,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 }
 .about-item:hover span{
 	opacity: 1;	
-	border: 2px solid #fa5b40;
+	border: 2px solid #f2b400;
 	font-size: 35px;
 	-webkit-transform: scale(1.1,1.1) rotate(360deg) ;
 	-moz-transform: scale(1.1,1.1) rotate(360deg) ;
@@ -1692,16 +1724,16 @@ ul.tranding_more_option li a .opt_icon i:before{
   
   .btn-primary:hover,
   .btn-primary:focus {
-	background-color: #fa5b41;
-	border-color: #fa5b41;
+	background-color: #f2b400;
+	border-color: #f2b400;
 	box-shadow: none;
 	outline: none;
   }
   
   .btn-primary {
 	color: #fff;
-	background-color: #fa5b41;
-	border-color: #fa5b41;
+	background-color: #f2b400;
+	border-color: #f2b400;
   }
   
   .our_team {
@@ -1793,12 +1825,12 @@ ul.tranding_more_option li a .opt_icon i:before{
   
   .backside .card a {
 	font-size: 18px;
-	color: #fa5b41 !important;
+	color: #f2b400 !important;
   }
   
   .frontside .card .card-title,
   .backside .card .card-title {
-	color: #fa5b41 !important;
+	color: #f2b400 !important;
   }
   
   .frontside .card .card-body img {
@@ -1847,7 +1879,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 .comments_form .form-control:focus, .comments_form .form-control:hover{
 	color: #111;
 	background-color: transparent;
-	border: 1px solid #fa5b41 !important;
+	border: 1px solid #f2b400 !important;
 	-webkit-transition: all 0.3s ease 0s;
    -moz-transition: all 0.3s ease 0s;
    -o-transition: all 0.3s ease 0s;
@@ -1924,7 +1956,7 @@ ul.tranding_more_option li a .opt_icon i:before{
     color: #9c9c9c;
 }
 .check_box_anchr {
-    color: #fa5b41 !important;
+    color: #f2b400 !important;
 }
 .dont_have_account{
 	text-align:left;
@@ -1938,7 +1970,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 	text-transform:capitalize;
 }
 .dont_have_account p a{
-	color:#fa5b41;
+	color:#f2b400;
 }
 .login_btn{
 	text-align:center;
@@ -1978,7 +2010,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 	border-left:0;
 }
 .release_tabs_wrapper .nav-tabs .nav-item.show .nav-link, .release_tabs_wrapper .nav-tabs .nav-link.active {
-    color: #fa5840;
+    color: #f2b400;
 	border-radius:0;
 	border:0;
 	background:transparent;
@@ -2006,10 +2038,10 @@ ul.tranding_more_option li a .opt_icon i:before{
 .relaese_viewall_wrapper a i:before{
 	font-size:15px;
 	margin-left:2px;
-	color:#fa5840;
+	color:#f2b400;
 }
 .relaese_viewall_wrapper a:hover{
-	color:#fa5840;
+	color:#f2b400;
 }
 .release_box_main_content{
 	background:#fff;
@@ -2143,7 +2175,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 	padding:16px 0 12px 10px;
 }
 .top_songs_list:hover .top_lis_left_content .release_content_artist p a{
-	color:#fa5840;
+	color:#f2b40e;
 }
 .top_songs_list:hover .m24_treanding_box_overlay{
 	opacity:1;
@@ -2240,7 +2272,7 @@ ul.tranding_more_option li a .opt_icon i:before{
     cursor: pointer;
 }
 .featured_song_slider .owl-theme .owl-nav .owl-next:hover, .featured_song_slider .owl-theme .owl-nav .owl-prev:hover{
-    color: #fa5b41;
+    color: #f2b400;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     -ms-transition: all .5s;
@@ -2322,7 +2354,7 @@ ul.tranding_more_option li a .opt_icon i:before{
     right: 0;
     top: 0;
     bottom: 0;
-	background: rgba(248, 71, 62, 0.85);
+	background: rgba(242, 180, 0, 0.85);
 }
 .concert_wrapper_slider{
 	float:left;
@@ -2399,7 +2431,7 @@ ul.tranding_more_option li a .opt_icon i:before{
     height: 23px;
     line-height: 23px;
     text-align: center;
-    background: #48201d;
+    background: #602e2a;
     color: #fff;
     border-radius: 100%;
     font-size: 10px;
@@ -2558,7 +2590,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 	color:#191919;
 }
 .treanding_slider_main_box :hover .various_song_playlist p a{
-	color:#fa5b41;
+	color:#f2b400;
 }
 .various_concert_icon{
 	top:42%;
@@ -2625,7 +2657,7 @@ ul.tranding_more_option li a .opt_icon i:before{
     transition: all 0.5s;
 }
 .app_btn a:hover{
-	color:#fa5840;
+	color:#f2b40e;
 	background:#fff;
 	 -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2949,11 +2981,11 @@ ul.tranding_more_option li a .opt_icon i:before{
 	padding-left:30px;
 }
 #accordion .card_pagee a:after {
-    color: #fa5840;
+    color: #f2b40e;
 }
 #accordion .card_pagee a.collapsed:after {
     content: "+";
-    color: #fa5840;
+    color: #f2b40e;
 }
 .quick_list_songs{
 	margin-bottom:30px;
@@ -2975,7 +3007,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 	text-transform:capitalize;
 }
 .quick_list_songs li a:hover, .footer_about_link_wrapper li a:hover{
-	color:#fa5b41;
+	color:#f2b400;
 }
 .more_playlist_wrapper h1{
 	font-size:18px;
@@ -2983,7 +3015,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 }
 .more_playlist_wrapper h1 a{
 	font-size:18px;
-	color:#fa5b41;
+	color:#f2b400;
 	text-transform:capitalize;
 }
 
@@ -3137,7 +3169,6 @@ ul.tranding_more_option li a .opt_icon i:before{
 .footer_wrapper {
    background:#f9f9f9;
    padding:90px 0;
-   padding-bottom:80px;
 }
 .foter_top_wrapper{
 	padding:20px 0;
@@ -3178,11 +3209,11 @@ ul.tranding_more_option li a .opt_icon i:before{
 	border:1px solid #eee;
 }
 .foter_top_wrapper li a:hover{
-	background: -moz-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: -webkit-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
+	background: -moz-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
 	color:#fff;
-	border:1px solid rgb(248, 71, 62);
+	border:1px solid rgb(242, 180, 0);
 }
 .footer_about_wrapper,
 .wrapper_second_useful,
@@ -3336,7 +3367,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 	list-style:none;
 }
 .btm_foter_box p a:hover{
-	color:#fa5b41;
+	color:#f2b400;
 	-webkit-transition: all .5s;
     -moz-transition: all .5s;
     -ms-transition: all .5s;
@@ -3596,10 +3627,10 @@ body.off-canvas-overlay-on {
     transition-duration: 0s !important;
     overflow: visible !important;
     position: absolute;
-    background:rgb(254, 121, 69);
-    background: -moz-linear-gradient(-45deg, rgb(254, 121, 69)0%, #fa5840 86%);
-    background: -webkit-linear-gradient(-45deg, rgb(254, 121, 69) 0%, #fa5840 86%);
-    background: linear-gradient(135deg, rgb(254, 121, 69) 0%, #fa5840 86%);
+    background:rgb(251, 253, 174);
+    background: -moz-linear-gradient(-45deg, rgb(251, 253, 174)0%, #f2b40e 86%);
+    background: -webkit-linear-gradient(-45deg, rgb(251, 253, 174) 0%, #f2b40e 86%);
+    background: linear-gradient(135deg, rgb(251, 253, 174) 0%, #f2b40e 86%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#91a5f4', endColorstr='#b08cf9', GradientType=1);
     width: 0;
     height: 100%;
@@ -3685,10 +3716,10 @@ body.off-canvas-overlay-on {
 }
 .adonis-player-wrap .jp-volume-bar-value,
 .adonis-playlist-player .jp-volume-bar-value {
-    background: #fa5840;
-    background: -moz-linear-gradient(-45deg, rgb(254, 121, 69) 0%, #fa5840 86%);
-    background: -webkit-linear-gradient(-45deg, rgb(254, 121, 69) 0%, #fa5840 86%);
-    background: linear-gradient(135deg, rgb(254, 121, 69) 0%, #fa5840 86%);
+    background: rgb(242, 180, 14);
+    background: -moz-linear-gradient(-45deg, rgb(251, 253, 174) 0%, #f2b40e 86%);
+    background: -webkit-linear-gradient(-45deg, rgb(251, 253, 174) 0%, #f2b40e 86%);
+    background: linear-gradient(135deg, rgb(251, 253, 174) 0%, #f2b40e 86%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='rgb(254, 121, 69)', endColorstr='#fa5840', GradientType=1);
     width: 0;
     height: 3px
@@ -3970,13 +4001,13 @@ body.off-canvas-overlay-on {
 	padding-left:20px;
 }
 .adonis-player-wrap a:hover {
-    color: #fa5b41
+    color: #f2b400
 }
 .adonis-player-wrap a.inactive-color {
     color: #a1a1a1
 }
 .adonis-player-wrap a.inactive-color:hover {
-    color: #fa5b41
+    color: #f2b400
 }
 .adonis-player-wrap .player-top {
     padding-top: 15px;
@@ -4037,7 +4068,7 @@ body.off-canvas-overlay-on {
    content: "";
     height: 10px;
     width: 10px;
-    background: #fa5840;
+    background: #f2b40e;
     display: inline-block;
     border-radius: 50%;
     -webkit-box-shadow: 2px 2px 16px 0 rgba(254, 121, 69, 0.2);
@@ -4059,7 +4090,7 @@ body.off-canvas-overlay-on {
 .adonis-player-wrap .jp-state-looped .jp-repeat,
 .adonis-player-wrap .jp-shuffle:focus,
 .adonis-player-wrap .jp-repeat:focus {
-    color: #fa5b41
+    color: #f2b400
 }
 .des_option_wrapper{
 	float:right;
@@ -4142,7 +4173,7 @@ body.off-canvas-overlay-on {
 	width:100%;
 }
 .artist-name{
-	color:#fa5b41;
+	color:#f2b400;
 }
 .adonis-player-wrap .adonis-playlist .adonis-player {
     padding: 40px;
@@ -4263,9 +4294,9 @@ body.off-canvas-overlay-on {
     height: 55px;
     top: 0;
 	border-radius:4px;
-	background: -moz-linear-gradient(90deg, rgb(248, 71, 62, 0.8) 20%, rgb(254, 121, 69, 0.8) 100%);
-    background: -webkit-linear-gradient(90deg, rgb(248, 71, 62, 0.8) 20%, rgb(254, 121, 69, 0.8) 100%);
-    background: linear-gradient(90deg, rgb(248, 71, 62, 0.8) 20%, rgb(254, 121, 69, 0.8) 100%);
+	background: -moz-linear-gradient(90deg, rgb(242, 180, 0, 0.8) 20%, rgb(251, 253, 174, 0.8) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(242, 180, 0, 0.8) 20%, rgb(251, 253, 174, 0.8) 100%);
+    background: linear-gradient(90deg, rgb(242, 180, 0, 0.8) 20%, rgb(251, 253, 174, 0.8) 100%);
     left: 0;
     opacity: 0;
 	  -webkit-transition: all .5s;
@@ -4308,7 +4339,7 @@ body.off-canvas-overlay-on {
     position: relative;
 }
 .adonis-player-wrap .artist-name a {
-    color: #fa5b41;
+    color: #f2b400;
 }
 .adonis-player-wrap .auto-progress-width-50 {
     flex-basis: 40%;
@@ -4386,7 +4417,7 @@ body.off-canvas-overlay-on {
     width: 3px;
     height: 1px;
     overflow: hidden;
-    background: linear-gradient(to bottom, #ff9500, #ff5e3a);
+    background: linear-gradient(to bottom, #f2b445, #f2b400);
     color: transparent;
     animation-name: pulse;
     animation-duration: 1s;
@@ -4588,7 +4619,7 @@ body.off-canvas-overlay-on {
 	width:150px;
 }
 .adonis-player-wrap .adonis-playlist a:hover{
-	color:#fa5840;
+	color:#f2b40e;
 }
 .sidebar_treanding_icon ul.tranding_more_option.tranding_open_option{
 	right:50px;
@@ -4650,7 +4681,7 @@ body.off-canvas-overlay-on {
 	transition: all 0.5s;
 }
 .indx_title_left_wrapper li a:hover{
-	color:#ff7e00;
+	color:#f2b445;
 	-webkit-transition: all 0.5s;
 	-o-transition: all 0.5s;
 	-ms-transition: all 0.5s;
@@ -4658,7 +4689,7 @@ body.off-canvas-overlay-on {
 	transition: all 0.5s;
 }
 .indx_title_left_wrapper li:last-child{
-	color:#ff7e00;
+	color:#f2b445;
 	margin-left:10px;
 }
 .album_list_tab{
@@ -4683,7 +4714,7 @@ body.off-canvas-overlay-on {
 	right:0;
 	margin:0px auto;
 	height:3px;
-	background:#fa5840;
+	background:#f2b40e;
 	opacity:0;
 	bottom:-8px;
 	visibility:hidden;
@@ -4724,25 +4755,25 @@ body.off-canvas-overlay-on {
 	background:#f9f9f9;
 }
 .blog_pagination_section .next i:before, .blog_pagination_section .prev i:before {
-   color:rgb(254, 121, 69);
+   color:rgb(251, 253, 174);
    font-size:16px;
 }
 .blog_pagination_section ul li a:hover{
-    background: -moz-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: -webkit-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
+    background: -moz-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
     cursor: pointer;
     -webkit-transition: all .6s ease;
     color: #fff;
-    border: 1px solid rgb(248, 71, 62);
+    border: 1px solid rgb(242, 180, 0);
 }
 .blog_pagination_section .next:hover i:before, .blog_pagination_section .prev:hover i:before {
 	color:#fff;
 }
 .blog_pagination_section .third_pagger a {
-	background: -moz-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: -webkit-linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
-    background: linear-gradient(90deg, rgb(248, 71, 62) 20%, rgb(254, 121, 69) 100%);
+	background: -moz-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251,253, 174) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
+    background: linear-gradient(90deg, rgb(242, 180, 0) 20%, rgb(251, 253, 174) 100%);
     cursor: pointer;
     -webkit-transition: all .6s ease;
     color: #fff;
@@ -4851,7 +4882,7 @@ body.off-canvas-overlay-on {
 	float:left; width:100%;
 }
 .album_list_wrapper>ul:hover>li>a, .album_list_wrapper>ul:hover .top_song_artist_contnt h1 a{
-	color: #fa5b41;
+	color: #f2b400;
 }
 .play_hover {
 	position: absolute;
@@ -4871,7 +4902,7 @@ body.off-canvas-overlay-on {
 	-o-transition: all 0.3s ease-in-out;
 }
 .play_hover i:before{
-	color:#fa5b41;
+	color:#f2b400;
 	font-weight:900;
 	font-size:40px;
 }
@@ -5418,9 +5449,9 @@ body.off-canvas-overlay-on {
 	padding:35px;
 	border-radius:10px;
 	margin-bottom:40px;
-    -moz-box-shadow: 0 4px 15px 0px rgba(248, 71, 62, 0.05);
-    -webkit-box-shadow: 0 4px 15px 0px rgba(248, 71, 62, 0.05);
-    box-shadow: 0 4px 15px 0px rgba(248, 71, 62, 0.05);
+    -moz-box-shadow: 0 4px 15px 0px rgba(242, 180, 0, 0.05);
+    -webkit-box-shadow: 0 4px 15px 0px rgba(242, 180, 0, 0.05);
+    box-shadow: 0 4px 15px 0px rgba(242, 180, 0, 0.05);
 	background:#fff;
 }
 .jp_blog_single_client_img{
@@ -5561,7 +5592,7 @@ body.off-canvas-overlay-on {
 }
 .author_detail  .publish_date{
 	font-size:14px;
-	color: #fa5b41;
+	color: #f2b400;
 	margin-left:10px;
 }
 .author_content a{
@@ -6128,7 +6159,7 @@ span.ovrly_text2 {
 	top:50%;
 }
 /**----- pricing plans css -------**/
-.pricing_wrapper2{
+/* .pricing_wrapper2{
 	padding:80px 0;
 }
 .pricing_box_wrapper2{
@@ -6267,7 +6298,7 @@ span.ovrly_text2 {
 	padding: 50px 0px;
 	text-align: center;
 	margin: 70px auto 0 auto;
-}
+} */
 .m24_acc_ovrview_list {
 	width: 50%;
 	display: inline-block;
@@ -6829,11 +6860,11 @@ span.ovrly_text2 {
 	color:#fff;
 }
 .index2_btm_footer{
-	background:#221042;
+	background: #221042;
 }
 /**----- index 3 wrapper css -------**/
 .index3_main_header, .index3_treanding_wraaper, .index3_release_wrapper, .index3_top_songs_wrapper, .index3_punjabi_songs, .index3_featured_song_slider .various_song_playlist, .index3_pricing_plans, .index3_blog_wrapper, .index3_partners_section, .index3_footer_wrapper, .index3_bottom_footer, .index3_lang_wrapper .lang_list_checkbox li:hover, .index3_main_header .crm_message_dropbox_wrapper .nice-select .list{
-	background:#04031d;
+	background:#04031d!important;
 }
 .index3_sidebar, .index3_sidebar #toggle_close, .index3_sidebar #cssmenu > ul > li > a{
 	background:#080729 !important;
@@ -6843,13 +6874,13 @@ span.ovrly_text2 {
 	background:#fff;
 }
 .index3_slider_wrapper, .index3_release_wrapper .release_content_artist, .index3_top_songs_list, .index3_top_songs_wrapper .top_lis_left_content .release_content_artist, .index3_featured_list, .index3_pricing_box, .index3_blog_img_content, .index3_quick_wrapper, .index3_quick_wrapper #accordion .card, .index3_index_top_wrapper, .index3_lang_wrapper .modal-content, .index3_login_modal .modal-content, .index3_search_bar .res_search_box{
-	background:#0f0e37;
+	background: #0f0e37 !important;
 }
 .index3_slider_wrapper .carousel-inner .carousel-item .carousel-captions .content h1, .index3_slider_wrapper .carousel-inner .carousel-item .carousel-captions .content h2{
-	color:#fff; font-weight:300;
+	color: #fff!important; font-weight:300;
 }
 .white_heading_wrapper h1,  .treanding_song_slider2 .owl-theme .owl-nav .owl-prev, .treanding_song_slider2 .owl-theme .owl-nav .owl-next, .index3_release_wrapper .release_tabs_wrapper .nav-tabs .nav-link, .index3_release_wrapper .relaese_viewall_wrapper a, .release_content_artist2 p a, .index3_top_songs_wrapper .relaese_viewall_wrapper a, .index3_top_songs_wrapper .top_lis_left_content .release_content_artist p a, .index3_top_songs_wrapper .top_list_tract_time p, .index3_top_songs_wrapper .top_list_tract_view p, .index3_top_songs_wrapper .top_song_list_picks .m24_tranding_more_icon i:before, .index3_featured_song_slider .owl-theme .owl-nav .owl-prev, .index3_featured_song_slider .owl-theme .owl-nav .owl-next, .index3_featured_list .featured_artist_detail p a, .index3_featured_song_slider .various_song_playlist p a, .index3_pricing_box h1, .index3_pricing_box h2, .index3_pricing_box .monthly, .index3_pricing_box .pricing_list22 li, .index3_blog_wrapper .relaese_viewall_wrapper a, .index3_blog_img_content .blog_content_box span, .index3_blog_img_content .featured_artist_detail p a, .index3_blog_img_content .blog_content_box p, .index3_partners_slider .owl-theme .owl-nav .owl-prev, .index3_partners_slider .owl-theme .owl-nav .owl-next, .index3_quick_wrapper #accordion .card_pagee a, .index3_quick_wrapper .quick_list_songs h1, .index_more h1, .ft_heading h4, .index3_adoins_wrapper .jp-title, .index3_adoins_wrapper .m24_tranding_more_icon i:before, .index3_adoins_wrapper a, .index3_adoins_wrapper .jp_current_time_wrapepr, .index3_adoins_wrapper .playlist-item a, .index3_lang_wrapper .m24_language_box h1, .index3_lang_wrapper .music_field_box label, .index3_main_header .crm_message_dropbox_wrapper ul li:first-child a, .index3_main_header .crm_mess_img_cont_wrapper h4 span, .index3_login_modal .m24_language_box h1, .index3_login_modal .m24_language_box p, .index3_login_modal .login_remember_box .control, .index3_login_modal .login_remember_box .forget_password, .index3_search_bar .res_search_bar i:before, .index3_search_bar .notify_para{
-	color:#fff;
+	color:#f2b40e;
 }
 .index3_treanding_wraaper .treanding_song_slider, .index3_featured_song_slider, .index3_pricing_box h1, .index3_footer_wrapper .abotus_content, .index3_login_modal .m24_language_box{
 	border-bottom:1px solid rgba(255, 255, 255, 0.3);
