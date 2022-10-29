@@ -7,11 +7,21 @@ const studioBantu = require('../models/formModel')
 //route GET /
 //access private
 const getHome = asyncHandler(  async(req, res) => {   
-    const songs = await songModel.find() 
+    const trendingSongs = await songModel.find().sort({"noOfPlays": -1}) 
+    const newRelease = await songModel.find().sort({"createdAt": 1})
     
-        res.status(200).render('index', {title : 'Home Page', trendingSongs: songs, newRelease: songs})
+    console.log(trendingSongs);
+    console.log(newRelease);
+    
+        res.status(200).render('index', {title : 'Home Page', trendingSongs, newRelease, isAuthenticated: req.isAuthenticated()})
     }
 ) 
+
+const getLogin = asyncHandler(  async(req, res) => {   
+        res.status(200).render('login', {title: 'Login Page'})
+    }
+) 
+
 
 //desc Get About Page
 //route GET /about
@@ -59,12 +69,12 @@ const getGenres_single = asyncHandler(  async(req, res) => {
 //route GET /download
 //access private
 const getDownload = asyncHandler( async(req, res)  => {
-    // const {id} = req.params;
-    // const song = await songModel.findOne({_id: id})
+    const {id} = req.params;
+    const song = await songModel.findOne({_id: id})
 
-    // console.log(song)
+    console.log(song)
 
-    res.render('download', {title: 'Download Page'})
+    res.render('download', {title: 'Download Page', song})
 })
 
 //desc Get History Page
@@ -78,7 +88,7 @@ const getHistory= asyncHandler(async(req, res) => {
 //route GET /request_song
 //access private
 const getRequest = asyncHandler(async(req, res)  => {
-    res.render('request_song', {title: 'Request_song Page'})
+    res.render('request_song', {title: 'Request song Page'})
 })
 
 //desc Get contact Page
@@ -362,7 +372,7 @@ const deleteContact = asyncHandler( async(req, res) => {
 })
 
 module.exports = {
-    getHome, getAbout, getSongs, getSong_list, getAdd_playlist, getGenres, getGenres_single, getDownload, getHistory, getRequest, getContact,
+    getHome, getAbout, getSongs, getSong_list, getAdd_playlist, getGenres, getGenres_single, getDownload, getHistory, getRequest, getContact, getLogin,
     setHome, setAbout, setSongs, setSong_list, setAdd_playlist, setGenres, setGenres_single, setDownload, setHistory, setRequest, setContact,
     updateHome, updateAbout, updateSongs, updateSong_list, updateAdd_playlist, updateGenres, updateGenres_single, updateDownload, updateHistory, updateRequest, updateContact,
     deleteHome, deleteAbout, deleteSongs, deleteSong_list, deleteAdd_playlist, deleteGenres, deleteGenres_single, deleteDownload, deleteHistory, deleteRequest, deleteContact,

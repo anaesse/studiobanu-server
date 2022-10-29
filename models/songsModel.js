@@ -10,9 +10,6 @@ const songSchema = mongoose.Schema({
     title: {
         type: String
     },
-    tags: {
-        type: [String]
-    },
     noOfPlays: {
         type: Number
     },

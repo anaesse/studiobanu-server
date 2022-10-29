@@ -135,7 +135,7 @@
                                                     <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
                                                 </ul>
                                                 <div class="tranding_play_icon">
-                                                    <a href="#">
+                                                    <a href="/<%= song._id %>">
                                                         <i class="flaticon-play-button"></i>
                                                     </a>
                                                 </div>
@@ -226,11 +226,14 @@
                                                     <i class="flaticon-menu"></i>
                                                 </div>
                                                 <ul class="tranding_more_option">
-                                                    <li><a href="#"><span class="opt_icon"><i class="flaticon-playlist"></i></span>update</a></li>
+                                                    <% if(isAuthenticated) { %>
+                                                        <li><a href="#"><span class="opt_icon"><i class="flaticon-playlist"></i></span>update</a></li>
+                                                        <li><a href="#"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
+                                                <%    } %>
+
                                                     <li><a href="#"><span class="opt_icon"><i class="flaticon-download"></i></span>download</a></li>
                                                     <!-- <li><a href="#"><span class="opt_icon"><i class="flaticon-share"></i></span>share</a></li> -->
                                                     <li><a href="#"><span class="opt_icon"><i class="flaticon-files-and-folders"></i></span>view lyrics</a></li>
-                                                    <li><a href="#"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
                                                 </ul>
                                                 <div class="tranding_play_icon">
                                                     <a href="#">

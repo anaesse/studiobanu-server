@@ -2,6 +2,10 @@ require('dotenv').config()
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
 const {errorHandler} = require('./middleware/errorMiddleware')
+const passport = require('passport')
+const session = require('express-session');
+
+
 const connectDB = require('./config/dp')
 const port = process.env.PORT || 8000
 connectDB()
@@ -10,20 +14,39 @@ const app = express()
 
 
 //Handlers
+
 app.use(express.json())
 app.use(express.urlencoded({
     extended : false
 }))
 app.use(errorHandler)
 
+app.use(session({
+    secret: 'i love jesus',
+    resave: true,
+    saveUninitialized: false,
+}))
 
-// listening on port 8000
-app.listen(port, () => {
-    console.log(`listening on port ${port}`)
-})
+app.use(passport.initialize())
+app.use(passport.session())
+
+const formModel =require('./models/formModel')
+// passport.use(formModel.createStrategy())
+// passport.serializeUser(formModel.serializeUser())
+// passport.deserializeUser(formModel.deserializeUser())
+
+passport.serializeUser(function(user, done) {
+    done(null, user);
+  });
+  
+  passport.deserializeUser(function(user, done) {
+    done(null, user);
+  });
+
+app.use(express.static('public'));
+
 
 //static files
-app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 app.use('/images', express.static(__dirname + 'public/images'))
@@ -48,3 +71,11 @@ app.use('/history', require('./routes/sbRoute'))
 app.use('/request_song', require('./routes/sbRoute'))
 app.use('/contact', require('./routes/sbRoute'))
 app.use('/admin', require('./routes/songRoute'))
+app.use('/auth', require('./routes/userRoute'))
+
+
+
+// listening on port 8000
+app.listen(port, () => {
+    console.log(`listening on port ${port}`)
+})

@@ -27,9 +27,9 @@ exports.updateSong = asyncHandler(  async(req, res) => {
 ) 
 exports.deleteSong = asyncHandler(  async(req, res) => { 
     const {id} = req.params;
-    const song = await songModel.findOneAndDelete({_id: id}, {...req.body})
+    const song = await songModel.findOneAndDelete({_id: id})
     
-    res.status(204).send(song)
+    res.status(200).send(song)
     // console.log(goal); 
         // res.status(200).render(goal, {title : 'Home Page'})
     }

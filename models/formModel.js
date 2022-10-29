@@ -1,34 +1,25 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose')
+const passport = require('passport')
 
 const formSchema = mongoose.Schema({
-    name: {
+    username: {
         type: String,
+        unique: true,
         required: [true, 'This field is required']
     },
-    firstName: {
-        type: String,
-        required: [true, 'This field is required']
-    },
-    lastName: {
-        type: String,
-        required: [true, 'This field is required']
-    },
-    email: {
-        type: String,
-        required: [true, 'This field is required']
-    },
-    message: {
-        type: String
-    },
-    subject: {
+    password: {
         type: String
     }
-}, 
-  
+},  
 {
     timestamps: true,
-}
-    
-)
+})
 
-module.exports = mongoose.model('Form', formSchema)
+formSchema.plugin(passportLocalMongoose);
+
+
+const formModel = mongoose.model('Form', formSchema);
+
+
+module.exports = formModel;
