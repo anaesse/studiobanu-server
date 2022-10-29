@@ -18,6 +18,12 @@ const songSchema = mongoose.Schema({
     },
     song: {
         type: String
+    },
+    lyrics:{
+        type: String
+    },
+    genres:{
+        type: String
     }
 }, {
     timestamps : true

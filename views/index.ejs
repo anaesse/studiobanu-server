@@ -212,12 +212,13 @@
                         <div class="tab-content">
                             <div id="home" class="tab-pane active">
                                 <div class="row">
+                                    <% newRelease.forEach((song) => { %>
                                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pd1">
                                         <div class="treanding_slider_main_box release_box_main_content m24_cover">
-                                            <img src="images/rel.png" alt="img">
+                                            <img src="<%= song.image %>" alt="<%= song.title %>">
                                             <div class="release_content_artist release_content_artist2">
-                                                <p><a href="index.html#">Jabariya Jodi</a></p>
-                                                <p class="various_artist_text"><a href="index.html#">Various Artists</a></p>
+                                                <p><a href="#"><%= song.title %></a></p>
+                                                <p class="various_artist_text"><a href="#"><%= song.genre %></a></p>
                                             </div>
                                             <div class="m24_treanding_box_overlay release_box_overlay">
                                                 <div class="m24_tranding_box_overlay"></div>
@@ -225,21 +226,22 @@
                                                     <i class="flaticon-menu"></i>
                                                 </div>
                                                 <ul class="tranding_more_option">
-                                                    <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-playlist"></i></span>Add To playlist</a></li>
-                                                    <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-star"></i></span>favourite</a></li>
-                                                    <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-share"></i></span>share</a></li>
-                                                    <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-files-and-folders"></i></span>view lyrics</a></li>
-                                                    <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
+                                                    <li><a href="#"><span class="opt_icon"><i class="flaticon-playlist"></i></span>update</a></li>
+                                                    <li><a href="#"><span class="opt_icon"><i class="flaticon-download"></i></span>download</a></li>
+                                                    <!-- <li><a href="#"><span class="opt_icon"><i class="flaticon-share"></i></span>share</a></li> -->
+                                                    <li><a href="#"><span class="opt_icon"><i class="flaticon-files-and-folders"></i></span>view lyrics</a></li>
+                                                    <li><a href="#"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
                                                 </ul>
                                                 <div class="tranding_play_icon">
-                                                    <a href="index.html#">
+                                                    <a href="#">
                                                         <i class="flaticon-play-button"></i>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pd1">
+                                    <%                })%>
+                                    <!-- <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pd1">
                                         <div class="treanding_slider_main_box release_box_main_content m24_cover">
                                             <img src="images/rel1.png" alt="img">
                                             <div class="release_content_artist release_content_artist2">
@@ -427,10 +429,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
-                            <div id="menu1" class="tab-pane fade">
+                            <!-- <div id="menu1" class="tab-pane fade">
                                 <div class="row">
 
                                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pd1">
@@ -557,9 +559,9 @@
                                                 <ul class="tranding_more_option">
                                                     <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-playlist"></i></span>Add To playlist</a></li>
                                                     <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-star"></i></span>favourite</a></li>
-                                                    <!-- <li><a href="index3.html#"><span class="opt_icon"><i class="flaticon-share"></i></span>share</a></li> -->
+                                                    <li><a href="index3.html#"><span class="opt_icon"><i class="flaticon-share"></i></span>share</a></li>
                                                     <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-files-and-folders"></i></span>view lyrics</a></li>
-                                                    <!-- <li><a href="index3.html#"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li> -->
+                                                    <li><a href="index3.html#"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
                                                 </ul>
                                                 <div class="tranding_play_icon">
                                                     <a href="index.html#">
@@ -652,8 +654,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="menu2" class="tab-pane fade">
+                            </div> -->
+                            <!-- <div id="menu2" class="tab-pane fade">
                                 <div class="row">
 
                                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pd1">
@@ -875,9 +877,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div id="menu3" class="tab-pane fade">
+                            <!-- <div id="menu3" class="tab-pane fade">
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pd1">
                                         <div class="treanding_slider_main_box release_box_main_content m24_cover">
@@ -1100,8 +1102,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="menu4" class="tab-pane fade">
+                            </div> -->
+                            <!-- <div id="menu4" class="tab-pane fade">
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pd1">
                                         <div class="treanding_slider_main_box release_box_main_content m24_cover">
@@ -1323,8 +1325,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="menu5" class="tab-pane fade">
+                            </div> -->
+                            <!-- <div id="menu5" class="tab-pane fade">
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pd1">
                                         <div class="treanding_slider_main_box release_box_main_content m24_cover">
@@ -1476,8 +1478,6 @@
                                                     <i class="flaticon-menu"></i>
                                                 </div>
                                                 <ul class="tranding_more_option">
-                                                    <!-- <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-playlist"></i></span>Add To playlist</a></li>
-                                                    <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-star"></i></span>favourite</a></li> -->
                                                     <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-share"></i></span>update</a></li>
                                                     <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-files-and-folders"></i></span>view lyrics</a></li>
                                                     <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
@@ -1547,7 +1547,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 

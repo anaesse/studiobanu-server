@@ -2,14 +2,14 @@ const asyncHandler = require('express-async-handler')
 const songModel = require('../models/songsModel')
 
 
-const studioBantu = require('../models/sbModel')
+const studioBantu = require('../models/formModel')
 //desc Get Home Page
 //route GET /
 //access private
 const getHome = asyncHandler(  async(req, res) => {   
     const songs = await songModel.find() 
     
-        res.status(200).render('index', {title : 'Home Page', trendingSongs: songs})
+        res.status(200).render('index', {title : 'Home Page', trendingSongs: songs, newRelease: songs})
     }
 ) 
 
