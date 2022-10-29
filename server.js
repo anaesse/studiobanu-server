@@ -32,7 +32,7 @@ app.use('/webfonts', express.static(__dirname + 'public/webfonts'))
 
 //set templete engine
 app.use(expressLayouts)
-app.set('layout', './layouts/home-templete')
+app.set('layout', './layouts/full-width')
 app.set('view engine', 'ejs')
 
 //navigation
