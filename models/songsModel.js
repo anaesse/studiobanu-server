@@ -11,7 +11,8 @@ const songSchema = mongoose.Schema({
         type: String
     },
     noOfPlays: {
-        type: Number
+        type: Number,
+        default: 0,
     },
     song: {
         type: String

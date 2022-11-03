@@ -3,8 +3,9 @@ const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
 const {errorHandler} = require('./middleware/errorMiddleware')
 const passport = require('passport')
+const fileUpload = require('express-fileupload');
 const session = require('express-session');
-
+const bodyParser = require('body-parser')
 
 const connectDB = require('./config/dp')
 const port = process.env.PORT || 8000
@@ -19,6 +20,11 @@ app.use(express.json())
 app.use(express.urlencoded({
     extended : false
 }))
+app.use(bodyParser.urlencoded({extended: true}))
+
+app.use(fileUpload({
+  useTempFiles : true,
+}));
 app.use(errorHandler)
 
 app.use(session({
@@ -60,6 +66,7 @@ app.set('view engine', 'ejs')
 
 //navigation
 app.use('/', require('./routes/sbRoute'))
+app.use('/editPage', require('./routes/sbRoute'))
 app.use('/about', require('./routes/sbRoute'))
 app.use('/songs', require('./routes/sbRoute'))
 app.use('/song_list', require('./routes/sbRoute'))

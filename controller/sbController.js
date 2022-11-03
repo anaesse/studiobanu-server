@@ -1,8 +1,11 @@
 const asyncHandler = require('express-async-handler')
 const songModel = require('../models/songsModel')
+const axios = require('axios')
+
 
 
 const studioBantu = require('../models/formModel')
+const mongoose = require('mongoose')
 //desc Get Home Page
 //route GET /
 //access private
@@ -21,8 +24,17 @@ const getLogin = asyncHandler(  async(req, res) => {
         res.status(200).render('login', {title: 'Login Page'})
     }
 ) 
+const getRegister = asyncHandler(  async(req, res) => {   
+        res.status(200).render('register', {title: 'Register Page'})
+    }
+) 
 
 
+
+const getCreate = asyncHandler(  async(req, res) => {   
+    res.status(200).render('create', {title: 'Create Page'})
+}
+)
 //desc Get About Page
 //route GET /about
 //access private
@@ -35,6 +47,21 @@ const getAbout = asyncHandler( async(req, res) => {
 //access private
 const getSongs =asyncHandler(async(req, res) => {
     res.render('songs', {title: 'Discology/song Page'})
+})
+
+const getEdit =asyncHandler(async(req, res) => {
+    const {id} = req.params;
+    const song = await songModel.findOne({_id: id})
+    res.render('editpage', {title: 'Edit Page', song})
+})
+const getDelete =asyncHandler(async(req, res) => {
+    const {id} = req.params;
+    const song = await songModel.findOneAndDelete({_id: id})
+    res.redirect("/")
+})
+
+const setEdit =asyncHandler(async(req, res) => {
+    res.render('editpage', {title: 'Edit Page'})
 })
 
 //desc Get Song_list Page
@@ -74,7 +101,7 @@ const getDownload = asyncHandler( async(req, res)  => {
 
     console.log(song)
 
-    res.render('download', {title: 'Download Page', song})
+    res.render('download', {title: 'Download Page', song: song})
 })
 
 //desc Get History Page
@@ -196,15 +223,48 @@ const setHistory= asyncHandler( async(req, res) => {
     res.render('history', {title: 'History Page'})
 })
 
+const Logout = asyncHandler( async(req, res) => {
+    const result = await axios.post("http://127.0.0.1:8000/logout")
+    if(result.data.msg === 'succes') {
+        res.redirect('/')
+    } else {
+        throw new Error()
+    }
+    
+})
+
+const LogoutP = asyncHandler( async(req, res, next) => {
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        res.send({msg: 'succes'});
+      });  
+})
 //desc Set Reuest_song Page
 //route POST /request_song
 //access private
 const setRequest = asyncHandler( async(req, res)  => {
-    if (req.body.text){
-        res.status(400)
-        throw new Error('please add a text field')
-    }
-    res.render('request_song', {title: 'Request_song Page'})
+    const {email, name, msg} = req.body;
+    const sgMail = require('@sendgrid/mail');
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const mesg = {
+    to: 'sophiesse143@gmail.com',
+    from: email, // Use the email address or domain you verified above
+    subject: 'Song Request',
+    text: msg,
+    // html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    };
+    //ES6
+    sgMail
+    .send(mesg)
+    .then(() => {
+        res.redirect('/')
+    }, error => {
+        console.error(error);
+
+        if (error.response) {
+        console.error(error.response.body)
+        }
+    });
 })
 
 //desc Set contact Page
@@ -372,8 +432,8 @@ const deleteContact = asyncHandler( async(req, res) => {
 })
 
 module.exports = {
-    getHome, getAbout, getSongs, getSong_list, getAdd_playlist, getGenres, getGenres_single, getDownload, getHistory, getRequest, getContact, getLogin,
-    setHome, setAbout, setSongs, setSong_list, setAdd_playlist, setGenres, setGenres_single, setDownload, setHistory, setRequest, setContact,
+    getHome, getAbout, getSongs, getSong_list, getAdd_playlist, getGenres, getGenres_single, getDownload, getHistory, getRequest, getCreate, getEdit, getContact, getLogin,getRegister,getDelete,
+    setHome, setAbout, setSongs, setSong_list, setAdd_playlist, setGenres, setGenres_single, setDownload, setHistory, setRequest, setContact, setEdit, Logout, LogoutP,
     updateHome, updateAbout, updateSongs, updateSong_list, updateAdd_playlist, updateGenres, updateGenres_single, updateDownload, updateHistory, updateRequest, updateContact,
     deleteHome, deleteAbout, deleteSongs, deleteSong_list, deleteAdd_playlist, deleteGenres, deleteGenres_single, deleteDownload, deleteHistory, deleteRequest, deleteContact,
 }

@@ -33,7 +33,7 @@ exports.login = (req, res) => {
                 res.redirect('/');
             })
         }
-    })   
+    })     
 }
 
 exports.getUsers = asyncHandler(async(req, res) => { 

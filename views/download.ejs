@@ -29,33 +29,35 @@
                     <img src="<%= song.image %>" class="img-responsive" alt="img">
                     <div class="artist_wrapper_text">
                         <div class="artist_wrapper_left">
-                            <h1>song title</h1>
-                            <p>genre</p>
+                            <div class="pl-3">
+
+                                <h1>song title</h1>
+                                <p>genre</p>
+                            </div>
                             <!-- <p>Renowned for his soulful singing, Indian musician Arijit Singh is also a music composer, producer, recordist and programmer. He has several blockbuster songs to his credit and has won 23 awards so far, which makes him one of the most successful sing... Full Bio</p> -->
-                            <div class="artist_btn m24_cover">
-                                <div class="lang_apply_btn">
+                            <div class="artist_btn m24_cover d-flex align-items-center">
+                                <!-- <div class="lang_apply_btn "> -->
 
-                                    <button onclick="playSong('<%= song.song %>')"><i class="flaticon-play-button"></i> play </button>
+                                    <button onclick="playSong('<%= song.song %>')" class="login_wrapper"><i class="flaticon-play-button px-2"></i> play </button>
 
-                                </div>
+                                <!-- </div> -->
                                 <div class="cancel_wrapper">
                                     <a href="/request_song"><i class="flaticon-radio"></i>  download</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="artist_list_icon">
+                         <!-- <div class="artist_list_icon">
                             <div class="m24_tranding_more_icon">
                                 <i class="flaticon-menu"></i>
                             </div>
                             <ul class="tranding_more_option">
                                 <li><a href="download.html#"><span class="opt_icon"><i class="flaticon-playlist"></i></span>update</a></li>
-                                <!-- <li><a href="download.html#"><span class="opt_icon"><i class="flaticon-star"></i></span>favourite</a></li> -->
-                                <!-- <li><a href="download.html#"><span class="opt_icon"><i class="flaticon-share"></i></span>share</a></li> -->
                                 <li><a href="download.html#"><span class="opt_icon"><i class="flaticon-files-and-folders"></i></span>view lyrics</a></li>
                                 <li><a href="download.html#"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
                             </ul>
-                        </div>
+                        </div>  -->
                     </div>
+                    <p><%= song.lyrics %></p>
                 </div>
             </div>
         </div>
