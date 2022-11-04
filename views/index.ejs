@@ -124,16 +124,15 @@
                                             <img src="<%= song.image %>" alt="<%= song.title %>" >
                                             <div class="m24_treanding_box_overlay">
                                                 <div class="m24_tranding_box_overlay"></div>
-                                                <div class="m24_tranding_more_icon">
+                                                <!-- <div class="m24_tranding_more_icon">
                                                     <i class="flaticon-menu"></i>
                                                 </div>
                                                 <ul class="tranding_more_option">
-                                                    <!-- <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-share"></i></span>share</a></li> -->
-                                                    <li><a href="/create"><span class="opt_icon"><i class="flaticon-download"></i></span>create</a></li>
+                                                    <li><a href="/create"><span class="opt_icon"><i class="flaticon-add"></i></span>create</a></li>
                                                     <li><a href="index.html#"><span class="opt_icon"><i class="flaticon-files-and-folders"></i></span>view lyrics</a></li>
                                                     <li><a href="/editPage/<%= song._id %>"><span class="opt_icon"><i class="flaticon-playlist"></i></span>update</a></li>
                                                     <li><a href="/deletePage/<%= song._id %>"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
-                                                </ul>
+                                                </ul> -->
                                                 <div class="tranding_play_icon">
                                                     <a href="/<%= song._id %>">
                                                         <i class="flaticon-play-button"></i>
@@ -204,9 +203,9 @@
                             <h1>New Releases Albums
 </h1>
                         </div>
-                        <div class="relaese_viewall_wrapper">
-                            <a href="index.html#"> view all <i class="flaticon-right-arrow"></i></a>
-                        </div>
+                        <!-- <div class="relaese_viewall_wrapper">
+                            <a href="/all_songs"> view all <i class="flaticon-right-arrow"></i></a>
+                        </div> -->
                     </div>
                     <div class="col-xl-12 col-lg-12 col-md-12">
                         <div class="tab-content">
@@ -227,16 +226,16 @@
                                                 </div>
                                                 <ul class="tranding_more_option">
                                                     <% if(isAuthenticated) { %>
-                                                        <li><a href="#"><span class="opt_icon"><i class="flaticon-playlist"></i></span>update</a></li>
-                                                        <li><a href="#"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
-                                                <%    } %>
-
-                                                    <li><a href="#"><span class="opt_icon"><i class="flaticon-download"></i></span>download</a></li>
-                                                    <!-- <li><a href="#"><span class="opt_icon"><i class="flaticon-share"></i></span>share</a></li> -->
-                                                    <li><a href="#"><span class="opt_icon"><i class="flaticon-files-and-folders"></i></span>view lyrics</a></li>
+                                                        <li><a href="/create"><span class="opt_icon"><i class="flaticon-add"></i></span>create</a></li> 
+                                                        <li><a href="/editPage/<%= song._id %>"><span class="opt_icon"><i class="flaticon-playlist"></i></span>update</a></li>
+                                                        <li><a href="/deletePage/<%= song._id %>"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
+                                                <%    } %>   
+                                                    
+                                                    <li><a href="/<%= song._id %>"><span class="opt_icon"><i class="flaticon-files-and-folders"></i></span>view lyrics</a></li>
+                                                    <li><a href="/request_song"><span class="opt_icon"><i class="flaticon-download"></i></span>download</a></li>
                                                 </ul>
                                                 <div class="tranding_play_icon">
-                                                    <a href="#">
+                                                    <a href="/<%= song._id %>">
                                                         <i class="flaticon-play-button"></i>
                                                     </a>
                                                 </div>

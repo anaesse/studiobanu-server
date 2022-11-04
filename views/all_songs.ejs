@@ -1,0 +1,78 @@
+     <!--inner Title Start -->
+   <div class="indx_title_main_wrapper">
+    <div class="title_img_overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="indx_title_left_wrapper m24_cover">
+                    <h2>Song</h2>
+
+                    <ul>
+                        <li><a href="album.html#">Home</a> &nbsp;&nbsp;&nbsp;/</li>
+                        <li>song</li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- inner Title End -->
+<!-- release album wrapper start -->
+    <div class="treanding_songs_wrapper release_wrapper m24_cover">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="m24_heading_wrapper white_heading_wrapper">
+                        <h1>New Released Songs</h1>
+                    </div>
+                    <!-- <div class="relaese_viewall_wrapper">
+                        <a href="/all_songs"> view all <i class="flaticon-right-arrow"></i></a>
+                    </div> -->
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane active">
+                            <div class="row">
+                                <% newRelease.forEach((song) => { %>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 pd1">
+                                    <div class="treanding_slider_main_box release_box_main_content m24_cover">
+                                        <img src="<%= song.image %>" alt="<%= song.title %>">
+                                        <div class="release_content_artist release_content_artist2">
+                                            <p><a href="#"><%= song.title %></a></p>
+                                            <p class="various_artist_text"><a href="#"><%= song.genre %></a></p>
+                                        </div>
+                                        <div class="m24_treanding_box_overlay release_box_overlay">
+                                            <div class="m24_tranding_box_overlay"></div>
+                                            <div class="m24_tranding_more_icon">
+                                                <i class="flaticon-menu"></i>
+                                            </div>
+                                            <ul class="tranding_more_option">
+                                                <% if(isAuthenticated) { %>
+                                                    <li><a href="/create"><span class="opt_icon"><i class="flaticon-add"></i></span>create</a></li> 
+                                                    <li><a href="/editPage/<%= song._id %>"><span class="opt_icon"><i class="flaticon-playlist"></i></span>update</a></li>
+                                                    <li><a href="/deletePage/<%= song._id %>"><span class="opt_icon"><i class="flaticon-trash"></i></span>delete</a></li>
+                                            <%    } %>   
+                                                
+                                                <li><a href="/<%= song._id %>"><span class="opt_icon"><i class="flaticon-files-and-folders"></i></span>view lyrics</a></li>
+                                                <li><a href="/request_song"><span class="opt_icon"><i class="flaticon-download"></i></span>download</a></li>
+                                            </ul>
+                                            <div class="tranding_play_icon">
+                                                <a href="/<%= song._id %>">
+                                                    <i class="flaticon-play-button"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%                })%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!-- release album wrapper end -->

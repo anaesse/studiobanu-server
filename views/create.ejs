@@ -1,4 +1,8 @@
-
+<% if(!isAuthenticated) { %>
+    <script>
+        window.location.href = "http://localhost:8000"
+    </script>
+<% } %>
         <!-- Request song end-->
         <div id="mymodal" class="main-content">
             <div id="modal-content">
@@ -17,7 +21,12 @@
                             <input type="file" name="mp3" id="mp3">
                         </div>
                         <div class="form-group">
-                            <input  type="text" placeholder="Enter Music genre" name="genre" id="genre">
+                            <select name="genre" id="genre">
+                                <option>Select Genre</option>
+                                <% for(let i = 0; i < genre.length; i++) { %>
+                                    <option value="<%= genre[i].title %>"><%= genre[i].title %></option>
+                                <% } %>
+                            </select>
                         </div>
                         <div class="form-group">
                             <textarea id="lyrics" name="lyrics" placeholder="Enter Lyrics" rows="20" cols="20"></textarea>

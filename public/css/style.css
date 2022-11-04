@@ -1068,7 +1068,7 @@ span.comboTreeItemTitle{
 	border-radius:50px;
 	border:1px solid #f2b40e;
 	text-align:center;
-	margin-left:20px;
+	/* margin-left:20px; */
 	text-transform:uppercase;
 	color:#5a5a5a;
 	-webkit-transition: all 0.5s;
@@ -1176,7 +1176,8 @@ span.comboTreeItemTitle{
     font-size: 16px;
     color: #fff;
     cursor: pointer;
-    height: 45px;
+	margin-top: 15px;
+    height: 40px;
     text-transform: uppercase;
     line-height: 45px;
 	background-image:linear-gradient(to right, #f2b40e, #fbfda5, #fbfda1, #f2b400);
@@ -1844,7 +1845,7 @@ ul.tranding_more_option li a .opt_icon i:before{
   
   .frontside .card,
   .backside .card {
-	min-height: 312px;
+	min-height: 60vh;
   }
   
   .backside .card a {
@@ -2094,7 +2095,9 @@ ul.tranding_more_option li a .opt_icon i:before{
    transition: all 0.3s ease 0s;
 }
 .release_box_main_content  img{
-	border-radius:0; width:100%;
+	border-radius:0; 
+	height:300px;
+
 }
 .release_box_main_content p a{
 	font-size:18px;
@@ -4826,7 +4829,7 @@ body.off-canvas-overlay-on {
 }
 .artist_wrapper_text p{
 	color:#797979;
-	margin-bottom:20px;
+	/* margin-bottom:20px; */
 }
 .artist_btn{margin-top:30px;}
 .artist_btn .lang_apply_btn a i, .artist_btn .cancel_wrapper a i{
@@ -7465,7 +7468,7 @@ input[type='submit']{
 	font-size: 20px;
 	margin-top: 10px;
 	margin-bottom: 30px;
-	width: 75%;
+	width: 100%;
 	margin-left: 12.5%;
 	transition: 0.3s;
 	font-size: 24px;
@@ -7493,4 +7496,16 @@ input[type='submit']{
     100%{
         transform: translateY(0);
     }
+}
+.owl-carousel .owl-item img {
+	height: 230px;
+}
+.lyrics{
+	/* background: #f2b400; */
+	width: 60%;
+	/* height: 80%; */
+	/* margin: 30px 0; */
+	padding: 0 40px;
+	border-radius: 10px;
+
 }

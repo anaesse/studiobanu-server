@@ -21,6 +21,7 @@
 
 </head>
 <body>
+    
       <!-- preloader Start -->
       <div id="preloader">
         <div id="status">
@@ -37,24 +38,25 @@
                 
                 <ul class="sidebb">
                     <li ><a href='/'><i class="flaticon-home"></i>Home</a></li>
-                    <li ><a href='/about'><i class="flaticon-home"></i>ABOUT</a></li>
-                    <li ><a href='/login'><i class="flaticon-home"></i>Login</a></li>
-                    <li ><a href='/logout' ><i class="flaticon-home"></i>Logout</a></li>
-                    <li class='has-sub'><a href='#'><i class="flaticon-album"></i>DISCOGRAPHY</a>
+                    <li ><a href='/about'><i class="flaticon-album"></i>ABOUT</a></li>
+                    <li class='has-sub'><a href='#'><i class="flaticon-playlist"></i>DISCOGRAPHY</a>
                         <ul>
-                            <li>
-                                <a href="/songs"> <i class="flaticon-vinyl"></i>Song</a>
-                            </li>
-                            <li><a href="/song_list"><i class="flaticon-playlist-1"></i>Song list</a></li>
+                            <li><a href="/songs"> <i class="flaticon-playlist-1"></i>Song</a></li>
+                            <li><a href="/genres"><i class="flaticon-files-and-folders"></i>genres</a></li>
                         </ul>
                     </li>               
-                    <li class='has-sub'><a href='#'><i class="flaticon-playlist-3"></i>browse music</a>
+                    <li><a href='/request_song'><i class="flaticon-smartphone"></i>request song</a></li>
+                    <li><a href='/contact'><i class="flaticon-internet"></i>contact us</a></li>
+                    <li ><a href='/login'><i class="flaticon-right-arrow"></i>Login</a></li>
+                    <li ><a href='/logout' ><i class="flaticon-clock"></i>Logout</a></li>
+                    <!-- <li class='has-sub'><a href='#'><i class="flaticon-playlist-3"></i>browse music</a>
+                        <li><a href="/genres_single"><i class="flaticon-smartphone"></i>genres single</a></li>
                         <ul>
-                            <!-- <li><a href="add_playlist.html"><i class="flaticon-music"></i>add playlist</a></li> -->
+                            <li><a href="/song_list"><i class="flaticon-playlist-1"></i>Song list</a></li>
                             <li><a href="/genres"><i class="flaticon-files-and-folders"></i>genres</a></li>
                             <li><a href="/genres_single"><i class="flaticon-smartphone"></i>genres single</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     
                     <!-- <li class='has-sub'><a href='#'><i class="flaticon-playlist-1"></i>your music</a>
                         <ul>
@@ -62,8 +64,6 @@
                             <li><a href="history.html"><i class="flaticon-clock"></i>history</a></li> 						
                         </ul>
                     </li>     -->
-                    <li><a href='/request_song'><i class="flaticon-internet"></i>request song</a></li>
-                    <li><a href='/contact'><i class="flaticon-internet"></i>contact us</a></li>
                 </ul>
             </div>
         </div>    
@@ -316,6 +316,7 @@
      <!--custom js files-->
      <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
      <script src="/js/jquery-3.3.1.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.2.0/tinymce.min.js"></script>
      <script src="/js/bootstrap.min.js"></script>
      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
      <script src="/js/modernizr.js"></script>
@@ -331,7 +332,10 @@
      <script src="/js/mp3/player.js"></script>
      <script src="/js/custom.js"></script>
      <script>
-         const formTitle = document.getElementById('utitle') 
+         tinymce.init({
+            selector: '#lyrics'
+        });
+        const formTitle = document.getElementById('utitle') 
          const formGenre = document.getElementById('genre') 
          const formLyrics = document.getElementById('lyrics') 
          const modal = document.getElementById("mymodal");
@@ -349,6 +353,11 @@
              console.log('clicked')
             const audio = new Audio(url)
             audio.play()
+         }
+         function pauseSong (url) {
+             console.log('clicked')
+            const audio = new Audio(url)
+            audio.pause()
          }
 
        async function logout(id) {

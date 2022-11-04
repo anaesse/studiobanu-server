@@ -175,6 +175,11 @@
     .jp_current_time_wrapepr {
         padding-right: 12px
     }
+    .lyrics{
+        width: 100%;
+        padding-top: 25px;
+        padding-left: 0;
+    }
 }
 @media (max-width:1199px) and (min-width:991px) {
     .main_nav_ul {
@@ -992,9 +997,9 @@
     .jp_progress2 {
         width: 56%!important
     }
-    .artist_list_icon {
+    /* .artist_list_icon {
         display: none
-    }
+    } */
     .album_list_wrapper {
         width: 150%
     }

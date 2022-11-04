@@ -69,6 +69,7 @@ app.use('/', require('./routes/sbRoute'))
 app.use('/editPage', require('./routes/sbRoute'))
 app.use('/about', require('./routes/sbRoute'))
 app.use('/songs', require('./routes/sbRoute'))
+app.use('/all_songs', require('./routes/sbRoute'))
 app.use('/song_list', require('./routes/sbRoute'))
 app.use('/add_playlist', require('./routes/sbRoute'))
 app.use('/genres', require('./routes/sbRoute'))
@@ -79,6 +80,7 @@ app.use('/request_song', require('./routes/sbRoute'))
 app.use('/contact', require('./routes/sbRoute'))
 app.use('/admin', require('./routes/songRoute'))
 app.use('/auth', require('./routes/userRoute'))
+app.use('/genre', require('./routes/genreRoute'))
 
 
 

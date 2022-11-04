@@ -6,12 +6,13 @@ const axios = require('axios')
 
 const studioBantu = require('../models/formModel')
 const mongoose = require('mongoose')
+const Genre = require('../models/genreModel')
 //desc Get Home Page
 //route GET /
 //access private
 const getHome = asyncHandler(  async(req, res) => {   
-    const trendingSongs = await songModel.find().sort({"noOfPlays": -1}) 
-    const newRelease = await songModel.find().sort({"createdAt": 1})
+    const trendingSongs = await songModel.find().sort({"noOfPlays": -1})
+    const newRelease = await songModel.find().sort({"createdAt": 1}).limit(1) 
     
     console.log(trendingSongs);
     console.log(newRelease);
@@ -19,6 +20,16 @@ const getHome = asyncHandler(  async(req, res) => {
         res.status(200).render('index', {title : 'Home Page', trendingSongs, newRelease, isAuthenticated: req.isAuthenticated()})
     }
 ) 
+//desc Get View all Page
+//route GET /
+//access private
+const getViewAllSongs = asyncHandler(  async(req, res) => {   
+    // const trendingSongs = await songModel.find().sort({"noOfPlays": -1})
+    const newRelease = await songModel.find().sort({"createdAt": 1}) 
+        res.status(200).render('all_songs', {title : 'View all Page', newRelease, isAuthenticated: req.isAuthenticated()})
+    }
+) 
+
 
 const getLogin = asyncHandler(  async(req, res) => {   
         res.status(200).render('login', {title: 'Login Page'})
@@ -31,10 +42,10 @@ const getRegister = asyncHandler(  async(req, res) => {
 
 
 
-const getCreate = asyncHandler(  async(req, res) => {   
-    res.status(200).render('create', {title: 'Create Page'})
-}
-)
+const getCreate = asyncHandler( async(req, res) => {   
+    const genre = await Genre.find({})
+    res.render('create', {title: 'Create Page', genre, isAuthenticated: req.isAuthenticated()})
+})
 //desc Get About Page
 //route GET /about
 //access private
@@ -46,13 +57,16 @@ const getAbout = asyncHandler( async(req, res) => {
 //route GET /songs
 //access private
 const getSongs =asyncHandler(async(req, res) => {
-    res.render('songs', {title: 'Discology/song Page'})
+    const trendingSongs = await songModel.find().sort({"noOfPlays": -1})
+    const newRelease = await songModel.find().sort({"createdAt": 1}).limit(8) 
+    res.status(200).render('songs', {title : 'Discology/Song Page', trendingSongs, newRelease, isAuthenticated: req.isAuthenticated()})
 })
 
 const getEdit =asyncHandler(async(req, res) => {
     const {id} = req.params;
+    const genre = await Genre.find({})
     const song = await songModel.findOne({_id: id})
-    res.render('editpage', {title: 'Edit Page', song})
+    res.render('editpage', {title: 'Edit Page', song, genre})
 })
 const getDelete =asyncHandler(async(req, res) => {
     const {id} = req.params;
@@ -61,6 +75,7 @@ const getDelete =asyncHandler(async(req, res) => {
 })
 
 const setEdit =asyncHandler(async(req, res) => {
+    
     res.render('editpage', {title: 'Edit Page'})
 })
 
@@ -81,15 +96,38 @@ const getAdd_playlist =asyncHandler(  async(req, res) => {
 //desc Get Genres Page
 //route GET /genres
 //access private
-const getGenres = asyncHandler( async(req, res) => {
-    res.render('genres', {title: 'Genres Page'})
+const getGenres = asyncHandler(  async(req, res) => {
+    const newObj = []
+    const genre = await Genre.find({})
+    const songs = await songModel.find({})
+    console.log(songs)
+
+    for(let count = 0; count < genre.length; count++) {
+        const newSongGenre = songs.filter(song => song.genres == genre[count].title);
+        newObj.push({
+            [genre[count].title]: newSongGenre
+        })
+    }
+
+    res.render('genres', {title: 'Genres Page', categories: newObj})
 })
- 
 //desc Get Genres_single Page
 //route GET /genres_single
 //access private
 const getGenres_single = asyncHandler(  async(req, res) => {
-    res.render('genres_single', {title: 'Genres_single Page'})
+    const newObj = []
+    const genre = await Genre.find({})
+    const songs = await songModel.find({})
+    console.log(songs)
+
+    for(let count = 0; count < genre.length; count++) {
+        const newSongGenre = songs.filter(song => song.genres == genre[count].title);
+        newObj.push({
+            [genre[count].title]: newSongGenre
+        })
+    }
+
+    res.render('genres_single', {title: 'View all Page', categories: newObj})
 })
 
 //desc Get Download Page
@@ -270,12 +308,29 @@ const setRequest = asyncHandler( async(req, res)  => {
 //desc Set contact Page
 //route POST /contact
 //access private
-const setContact = asyncHandler( async(req, res) => {
-    if (req.body.text){
-        res.status(400)
-        throw new Error('please add a text field')
-    }
-    res.render('contact', {title: 'Contact Page'})
+const setContact = asyncHandler( async(req, res)  => {
+    const {first_name, last_name, email, sub, name, msg} = req.body;
+    const sgMail = require('@sendgrid/mail');
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const mesg = {
+    to: 'sophiesse143@gmail.com',
+    from: email, // Use the email address or domain you verified above
+    subject: 'Song Request',
+    text: msg,
+    // html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    };
+    //ES6
+    sgMail
+    .send(mesg)
+    .then(() => {
+        res.redirect('/')
+    }, error => {
+        console.error(error);
+
+        if (error.response) {
+        console.error(error.response.body)
+        }
+    });
 })
 
 //desc Update Home Page
@@ -432,7 +487,7 @@ const deleteContact = asyncHandler( async(req, res) => {
 })
 
 module.exports = {
-    getHome, getAbout, getSongs, getSong_list, getAdd_playlist, getGenres, getGenres_single, getDownload, getHistory, getRequest, getCreate, getEdit, getContact, getLogin,getRegister,getDelete,
+    getHome, getAbout, getSongs, getSong_list, getAdd_playlist, getGenres, getGenres_single, getDownload, getHistory, getRequest, getCreate, getEdit, getContact, getLogin,getRegister,getDelete,getViewAllSongs,
     setHome, setAbout, setSongs, setSong_list, setAdd_playlist, setGenres, setGenres_single, setDownload, setHistory, setRequest, setContact, setEdit, Logout, LogoutP,
     updateHome, updateAbout, updateSongs, updateSong_list, updateAdd_playlist, updateGenres, updateGenres_single, updateDownload, updateHistory, updateRequest, updateContact,
     deleteHome, deleteAbout, deleteSongs, deleteSong_list, deleteAdd_playlist, deleteGenres, deleteGenres_single, deleteDownload, deleteHistory, deleteRequest, deleteContact,
