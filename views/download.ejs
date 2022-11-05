@@ -22,7 +22,7 @@
     <!-- inner Title End -->
     <!-- artist single wrapper start -->
     <div class="artist_wrapper m24_cover pb-5">
-        <div class="d-lg-flex align-items-center justify-content-center mx-4 ">
+        <div class="d-flex justify-content-center align-items-center mx-4 ">
         
             <div class="player mx-4">
                 <img src="<%= song.image %>" alt="">
@@ -40,29 +40,24 @@
                         <button class="musicBtn" onclick="stop()">&#9611;</button>
                     </div>
                 <div class="slider_container">
-            
-                    <button id="/request_song " class="downloadBtn">Download</button>
+                    <a href="/request_song" class="downloadBtn">Download</a>
+                    <!-- <button id="/request_song " class="downloadBtn">Download</button> -->
+
+                    <div class="slider_container">
+                        <i class="fa fa-volume-down"></i>
+                        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                        <i class="fa fa-volume-up"></i>
+                    </div>
                 </div>
-                <div class="slider_container">
-                    <i class="fa fa-volume-down"></i>
-                    <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-                    <i class="fa fa-volume-up"></i>
-                </div>
+                <!-- <div class="slider_container"> -->
+
+                    <div onclick='LoadLyrics(this)' class="lyrics" >
+                        <p class="new"><%= song.lyrics %></p>
+                        <p class="old">view Lyrics</p>
+                    </div>
+                <!-- </div> -->
             
             </div>
-            <div>
-                <!-- <div class="lyricsTitle">
-                    <div>
-                        <h1><%= song.title %></h1>
-                        <p id="genre"><%= song.genres %></p>
-                    </div>
-                </div> -->
-                
-                <div onclick='LoadLyrics(this)' class="lyrics" >
-                    <p class="new"><%= song.lyrics %></p>
-                    <p class="old">view Lyrics</p>
-                </div>
-            </div> 
         </div>
     </div>
 

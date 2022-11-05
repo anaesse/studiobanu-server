@@ -12,7 +12,7 @@ const Genre = require('../models/genreModel')
 //access private
 const getHome = asyncHandler(  async(req, res) => {   
     const trendingSongs = await songModel.find().sort({"noOfPlays": -1})
-    const newRelease = await songModel.find().sort({"createdAt": 1}).limit(1) 
+    const newRelease = await songModel.find().sort({"createdAt": 1}) 
     
     console.log(trendingSongs);
     console.log(newRelease);

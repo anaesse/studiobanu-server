@@ -3142,7 +3142,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 	display: inline-block;
 	margin-top: 12px;
   }
-  .request_song .container .content .right-side .button input[type="button"]{
+  .request_song .container .content .right-side .button input[type="submit"]{
 	color: #fff;
 	font-size: 18px;
 	outline: none;
@@ -3153,7 +3153,7 @@ ul.tranding_more_option li a .opt_icon i:before{
 	cursor: pointer;
 	transition: all 0.3s ease;
   }
-  .request_song .container .content .button input[type="button"]:hover{
+  .request_song .container .content .button input[type="submit"]:hover{
 	background: #0F0E3c;
   }
   
@@ -7438,7 +7438,7 @@ span.ovrly_text2 {
     cursor: pointer;
 }
 .downloadBtn{
-    /* width: 40px;
+	/* width: 40px;
     height: 40px; */
     font-size: 18px;
     padding: 8px 16px;
@@ -7446,9 +7446,13 @@ span.ovrly_text2 {
     /* line-height: 20px; */
     text-align: center;
     border-radius: 8px;
-    border:1px solid sandybrown;
-    background: linear-gradient(to right bottom, sandybrown, orange);
+    border:1px solid #f1f1f1;
+    background: #f1f1f1;
+	color: #080729;
     cursor: pointer;
+}
+.downloadBtn:hover{
+	background-color: #f7f7f7;
 }
 .lyricsTitle{
     display: flex;
@@ -7512,7 +7516,22 @@ i.fa-volume-down,
 i.fa-volume-up{
     padding: 10px ;
 }
-
+.lyrics{
+	/* font-size: 18px; */
+    padding: 8px 0;
+    /* margin:6px 0; */
+	/* margin-left: 8px; */
+	width: 70%;
+    text-align: center;
+    border-radius: 8px;
+    border:1px solid #f2b445;
+    background: linear-gradient(to right bottom, sandybrown, orange);
+	color: #080729;
+    cursor: pointer;
+}
+/* .lyrics:hover{
+	background-color: #f2b40e;
+} */
 
 /* create style */
 .create-form{
@@ -7594,6 +7613,8 @@ i.fa-volume-up{
 
 .new.active {
 	display: block;
+	color: #080729!important;
+	padding: 18px;
 }
 
 .old.active {
