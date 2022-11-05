@@ -315,7 +315,7 @@ const setContact = asyncHandler( async(req, res)  => {
     const mesg = {
     to: 'sophiesse143@gmail.com',
     from: email, // Use the email address or domain you verified above
-    subject: 'Song Request',
+    subject: sub,
     text: msg,
     // html: '<strong>and easy to do anywhere, even with Node.js</strong>',
     };

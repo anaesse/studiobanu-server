@@ -333,17 +333,39 @@
      <script src="/js/custom.js"></script>
      <script>
          tinymce.init({
-            selector: '#lyrics'
+            selector: '#lyricz',
+            height: 200
         });
+        const lyrics = document.querySelector('.new') 
+        const old = document.querySelector('.old') 
+        const searchGenre = document.querySelector('#search_genre') 
+        const searchBtn = document.querySelector('.searchBtn') 
+        
+       
+
         const formTitle = document.getElementById('utitle') 
          const formGenre = document.getElementById('genre') 
          const formLyrics = document.getElementById('lyrics') 
          const modal = document.getElementById("mymodal");
          const modalClose = document.querySelector(".modal-close");
 
+         searchBtn.addEventListener('click', () => {
+             
+             window.location.href = "http://localhost:8000/genres#" + searchGenre.value.toUpperCase()
+         })
+
          const handleClose = () => {
             modal.classList.toggle('active');
             document.querySelector('html').style.overflowY = "scroll";
+        }
+
+        function LoadLyrics(e) {
+            console.log(lyrics);
+            lyrics.classList.toggle('active')
+            lyrics.innerHTML = lyrics.textContent
+            old.classList.toggle('active')
+
+
         }
          
         modalClose.addEventListener('click', handleClose)

@@ -4,44 +4,77 @@
     </script>
 <% } %>
         <!-- Request song end-->
-        <div id="mymodal" class="main-content">
-            <div id="modal-content">
         
-                    <span class="modal-close" >&times;</span>
+            <!-- <span class="modal-close" >&times;</span> -->
+            <!-- <div>
+                <div class="d-flex justify-content-center align-items-center">
+
                     <form action="/admin/addSong" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
+                        <div class="style-form">
                             <label for="">Upload Image</label>
-                            <input type="file" name="images" id="ïmage">
-                        </div>
-                        <div class="form-group">
+                        
+                            <input type="file" placeholder="Upload image" name="images" id="ïmage">
+                        
                             <input  type="text" placeholder="Enter Title" name="title" id="utitle">
-                        </div>
-                        <div class="form-group">
+                    
                             <label for="">Upload Song</label>
-                            <input type="file" name="mp3" id="mp3">
-                        </div>
-                        <div class="form-group">
+                        
+                            <input type="file" placeholder="Enter Song" name="mp3" id="mp3">
+                    
                             <select name="genre" id="genre">
                                 <option>Select Genre</option>
                                 <% for(let i = 0; i < genre.length; i++) { %>
                                     <option value="<%= genre[i].title %>"><%= genre[i].title %></option>
                                 <% } %>
-                            </select>
+                            </select> -->
+                            <!-- <div class="formGroup">
+                                <textarea id="lyrics" name="lyrics" placeholder="Enter Lyrics" rows="20" cols="20"></textarea>
+                            </div> -->
+                            <!-- <input type="submit" value="Upload" class="create">
                         </div>
-                        <div class="form-group">
-                            <textarea id="lyrics" name="lyrics" placeholder="Enter Lyrics" rows="20" cols="20"></textarea>
-                        </div>
-                        <input type="submit" value="Upload">
                     </form>
+                </div>
+            </div> -->
+
         
-                
+               
+            <div class="createFormBody">
+                <div class="create-form">
+                    <form action="/admin/addSong" method="post" enctype="multipart/form-data"></form>
+        
+                        
+                        <div class="style-form">
+                            <div class="form-block align-flex">      
+                                <label for="">Upload Image</label> 
+                                <input type="file" placeholder="Upload image" name="images" id="ïmage">
+                            </div>
+                            <div class="form-block">
+                                <input  type="text" placeholder="Enter Song Title" name="title" id="utitle">
+                            </div>
+                            <div class="form-block align-flex">
+                                <label for="">Upload Song</label>
+                                <input type="file"  name="mp3" id="mp3">
+                            </div>
+                            <div class="form-block">
+                                <select name="genre" id="genre">
+                                    <option>Select Genre</option>
+                                    <% for(let i = 0; i < genre.length; i++) { %>
+                                        <option value="<%= genre[i].title %>"><%= genre[i].title %></option>
+                                    <% } %>
+                                </select>
+                            </div>        
+                            <div class="form-block">
+                                <textarea id="lyricz" name="lyrics" placeholder="Enter Lyrics" rows="20" cols="20"></textarea>
+                            </div>
+                            <div >
+                                <input type="submit" value="Upload" class="create">
+                            </div>
+                        </div>
+                    
+        
+                    </form>
+                </div>
             </div>
-        
-        </div>
-        
-        
-               
-               
           
         
           
