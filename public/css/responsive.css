@@ -1039,6 +1039,9 @@
 	.index4_body_wrapper .body_main_header .m24_navigation_wrapper {
 		width: 83%; padding-left:20px;
 	}
+    .player img{
+        width: 350px;
+    }
 }
 @media (max-width:440px) {
     .images{
@@ -1108,6 +1111,9 @@
 	.album_list_wrapper2{
 		width:100%;
 	}
+    .player img{
+        width: 320px;
+    }
 }
 @media (max-width:380px) {
     .images{
@@ -1226,6 +1232,19 @@
 	.album_list_wrapper2{
 		width:100%;
 	}
+    .player img{
+        width: 300px;
+    }
+    
+    .seek_slider{
+        width: 40%;
+    }
+}
+@media (max-width:360px) {
+    .player img{
+        width: 250px;
+    }
+
 }
 @media (max-width:320px) {
     .images{

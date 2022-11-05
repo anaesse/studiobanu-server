@@ -7509,3 +7509,109 @@ input[type='submit']{
 	border-radius: 10px;
 
 }
+
+
+
+/* download/lyrics page */
+
+.player {
+    width: 400px;
+}
+
+.player img {
+    width: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.player audio {
+    width: 400px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+.musicBtn{
+    width: 40px;
+    height: 40px;
+    padding: 0.5%;
+	margin: 10px 0;
+    /* line-height: 20px; */
+    text-align: center;
+    border-radius: 50%;
+    border:1px solid sandybrown;
+    background: linear-gradient(to right bottom, sandybrown, orange);
+    cursor: pointer;
+}
+.downloadBtn{
+    /* width: 40px;
+    height: 40px; */
+    font-size: 18px;
+    padding: 8px 16px;
+    margin:6px 0;
+    /* line-height: 20px; */
+    text-align: center;
+    border-radius: 8px;
+    border:1px solid sandybrown;
+    background: linear-gradient(to right bottom, sandybrown, orange);
+    cursor: pointer;
+}
+.lyricsTitle{
+    display: flex;
+    justify-content: center;
+}
+#genre{
+    display: flex;
+    justify-content: center;
+}
+#lyrics{
+    background: wheat;
+    padding: 18px;
+    margin: 20px;
+    border: 2px solid #3774ff;
+    border-radius: 8px;
+}
+
+.slider_container{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.seek_slider,
+.volume_slider{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: #83a9ff;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border: 3px solid #3774ff;
+    cursor: pointer;
+    border-radius: 100%;
+}
+.seek_slider:hover,
+.volume_slider:hover{
+    opacity: 1.0;
+}
+.seek_slider{
+    width: 60%;
+	margin: 5px 10px;
+}
+.volume_slider{
+    width: 30%;
+}
+/* .current-time,
+.total-duration{
+    padding: 10px ;
+} */
+i.fa-volume-down,
+i.fa-volume-up{
+    padding: 10px ;
+}
