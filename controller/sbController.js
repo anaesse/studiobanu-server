@@ -66,7 +66,7 @@ const getEdit =asyncHandler(async(req, res) => {
     const {id} = req.params;
     const genre = await Genre.find({})
     const song = await songModel.findOne({_id: id})
-    res.render('editpage', {title: 'Edit Page', song, genre})
+    res.render('editpage', {title: 'Edit Page', song, genre, isAuthenticated: req.isAuthenticated()})
 })
 const getDelete =asyncHandler(async(req, res) => {
     const {id} = req.params;

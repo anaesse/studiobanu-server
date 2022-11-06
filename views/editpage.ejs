@@ -1,38 +1,45 @@
+<% if(!isAuthenticated) { %>
+    <script>
+        window.location.href = "http://localhost:8000"
+    </script>
+<% } %>
+               
+<div class="createFormBody">
+    <div class="create-form">
+        <form action="/admin/updateSong/<%= song._id %>"  method="post" enctype="multipart/form-data"></form>
 
-        <!-- Request song end-->
-<div id="mymodal" class="main-content">
-    <div id="modal-content">
-
-            <span class="modal-close" >&times;</span>
-            <form action="/admin/updateSong/<%= song._id %>" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="">Upload Image</label>
-                    <input type="file" name="images" id="ïmages">
+            
+            <div class="style-form">
+                <div class="form-block align-flex">      
+                    <label for="">Upload Image</label> 
+                    <input type="file" placeholder="Upload image" name="images" id="ïmage">
                 </div>
-                <div class="form-group">
-                    <input value="<%= song.title %>" type="text" placeholder="Enter Title" name="title" id="utitle">
+                <div class="form-block">
+                     <input value="<%= song.title %>" type="text" placeholder="Enter Title" name="title" id="utitle">
                 </div>
-                <div class="form-group">
+                <div class="form-block align-flex">
                     <label for="">Upload Song</label>
-                    <input type="file" name="mp3" id="mp3">
+                    <input type="file"  name="mp3" id="mp3">
                 </div>
-                <div class="form-group">
-                    <select name="genre" id="genre" value="<%= song.genre %>">
+                <div class="form-block">
+                      <select name="genre" id="genre" value="<%= song.genre %>">
                         <option>Select Genre</option>
                         <% for(let i = 0; i < genre.length; i++) { %>
                             <option value="<%= genre[i].title %>"><%= genre[i].title %></option>
                         <% } %>
                     </select>
+                </div>        
+                <div class="form-block">
+                     <textarea id="lyricz" name="lyrics" placeholder="Enter Lyrics" rows="20" cols="20"><%= song.lyrics %></textarea>
                 </div>
-                <div class="form-group">
-                    <textarea id="lyricz" name="lyrics" placeholder="Enter Lyrics" rows="20" cols="20"><%= song.lyrics %></textarea>
+                <div >
+                    <input type="submit" value="Upload" class="create">
                 </div>
-                <input type="submit" value="Upload">
-            </form>
-
+            </div>
         
-    </div>
 
+        </form>
+    </div>
 </div>
 
 
