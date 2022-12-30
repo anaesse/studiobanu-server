@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Node js server for studio bantu",
   "main": "server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "start": "nodemon server"
+    "start": "node server"
   },
   "author": "Sophia Edeki",
   "license": "ISC",
